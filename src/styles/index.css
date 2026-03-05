@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import './colors.css';
+@import './typography.css';
+
+/* @import "tailwindcss";
 
 :root {
   --font-family: system-ui, sans-serif;
@@ -37,5 +40,4 @@
     line-height: var(--line-height-m);
   }
 }
-
-/* .debug-btn { background: red !important; color: white !important; } */
+ */

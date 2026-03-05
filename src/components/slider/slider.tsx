@@ -1,22 +1,99 @@
-import { Slider } from 'radix-ui'
+'use client'
 
-const sliderRootClasses =
-  'touch-none select-none relative flex items-center w-[200px] h-5'
+import {
+   SliderArrow,
+   SliderContent,
+   SliderDots,
+   SliderRoot,
+   SliderSlide,
+   useSlider,
+} from '@/shared/components/Slider'
+import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons'
+import Image from 'next/image'
+import React, { ReactNode, useEffect } from 'react'
+import { cn } from '@/shared/lib'
 
-const sliderTrackClasses = 'relative grow h-[3px] bg-black/70 rounded-full'
+type Props = {
+   images: string[]
+   className?: string
+   disabled?: boolean
+   renderSlideAction?: (src: string, isActive: boolean, currentSlide: number) => ReactNode
+   initialSlide?: number
+   onSlideChange?: (index: number) => void
+   isCrop?: boolean
+}
 
-const sliderRangeClasses = 'absolute h-full bg-white rounded-full'
+export const Slider = ({
+   images,
+   className,
+   disabled,
+   renderSlideAction,
+   initialSlide = 0,
+   onSlideChange,
+   isCrop = false,
+}: Props) => {
+   const { sliderRef, instanceRef, currentSlide, slides } = useSlider(true, initialSlide)
 
-const sliderThumbClasses =
-  'block w-5 h-5 bg-white rounded-[10px] shadow-[0_2px_10px_rgb(0_0_0/40%)] transition-all duration-200 ease-in-out hover:bg-violet-400 focus:outline-none focus:shadow-[0_0_0_5px_rgb(0_0_0/50%)]'
+   useEffect(() => {
+      if (onSlideChange) {
+         onSlideChange(currentSlide)
+      }
+   }, [currentSlide, onSlideChange])
 
-export const SliderDemo = () => (
-  <form>
-    <Slider.Root className={sliderRootClasses} defaultValue={[50]} max={100} step={1}>
-      <Slider.Track className={sliderTrackClasses}>
-        <Slider.Range className={sliderRangeClasses} />
-      </Slider.Track>
-      <Slider.Thumb className={sliderThumbClasses} aria-label="Volume" />
-    </Slider.Root>
-  </form>
-)
+   const onNextSlideHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation()
+      instanceRef.current?.next()
+   }
+   const onPrevSlideHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation()
+      instanceRef.current?.prev()
+   }
+   const onDotClickHandler = (i: number) => instanceRef.current?.moveToIdx(i)
+
+   return (
+      <SliderRoot className={className}>
+         <SliderContent ref={sliderRef}>
+            {images.map((src, i) => (
+               <SliderSlide key={i}>
+                  {renderSlideAction ? (
+                     renderSlideAction(src, i === currentSlide, currentSlide)
+                  ) : (
+                     <Image
+                        src={src}
+                        fill
+                        alt={'slider_element'}
+                        className={cn(isCrop ? 'object-cover' : 'object-contain', 'cursor-pointer')}
+                     />
+                  )}
+               </SliderSlide>
+            ))}
+         </SliderContent>
+
+         {/* !disabled - condition for CardPost, for cut image */}
+         {images.length > 1 && !disabled && (
+            <>
+               <SliderArrow
+                  className={'left-[4px]'}
+                  onClick={onPrevSlideHandler}
+                  disabled={disabled}
+               >
+                  <ArrowLeftIcon className={'group-hover:text-accent-300'} />
+               </SliderArrow>
+               <SliderArrow
+                  className={'right-[4px]'}
+                  onClick={onNextSlideHandler}
+                  disabled={disabled}
+               >
+                  <ArrowRightIcon className={'group-hover:text-accent-300'} />
+               </SliderArrow>
+
+               <SliderDots
+                  slides={slides}
+                  currentSlide={currentSlide}
+                  onDotClick={onDotClickHandler}
+               />
+            </>
+         )}
+      </SliderRoot>
+   )
+}
