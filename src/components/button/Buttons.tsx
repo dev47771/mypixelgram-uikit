@@ -1,7 +1,8 @@
 import type { ComponentPropsWithRef } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { clsx } from 'clsx'
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
+
 
 type Props = {
    variant?: 'primary' | 'secondary' | 'outlined' | 'textButton'

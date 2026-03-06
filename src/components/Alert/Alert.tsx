@@ -1,6 +1,7 @@
 
+import { CloseAlertIcon } from '@/icons/CloseAlertIcon'
 import { Toaster, toast } from 'react-hot-toast'
-import { CloseAlertIcon } from '../../icons/CloseAlertIcon'
+
 
 export const Alert = () => (
    <Toaster

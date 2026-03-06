@@ -1,6 +1,5 @@
-import { PostOutlineIcon } from '@/shared/icons'
-import { cn } from '@/shared/lib'
-import Image from 'next/image'
+import { PostOutlineIcon } from '@/icons'
+import { cn } from '@/lib'
 
 type AvatarSize = 'sm' | 'md' | 'lg' | 'profile'
 
@@ -22,7 +21,7 @@ export const Avatar = ({ src, alt = 'Avatar', size = 'sm' }: Props) => {
 
    if (src) {
       return (
-         <Image
+         <img
             src={src}
             alt={alt}
             width={pixelSize}

@@ -1,7 +1,10 @@
-import { LogoutIcon } from '@/shared/icons'
-import { Button } from '.'
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import Link from 'next/link'
+
+import { LogoutIcon } from '@/icons'
+import { Button } from './Button'
+
 
 const meta = {
    argTypes: {
