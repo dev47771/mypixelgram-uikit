@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { Alert, alert } from './Alert'
-import { Button } from '../button'
+import { Button } from '../Button'
+
 
 
 
