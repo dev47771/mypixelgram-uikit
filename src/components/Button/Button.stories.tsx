@@ -1,9 +1,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import Link from 'next/link'
-
 import { LogoutIcon } from '@/icons'
 import { Button } from './Button'
+
 
 
 const meta = {
@@ -31,7 +30,7 @@ export const Primary: Story = {
 
 export const PrimaryAsLink: Story = {
    args: {
-      children: <Link href={'#'}>Button as link</Link>,
+      children: <a href="#">Button as link</a>,
       disabled: false,
       variant: 'primary',
       asChild: true,

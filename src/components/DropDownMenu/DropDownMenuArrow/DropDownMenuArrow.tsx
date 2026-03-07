@@ -1,6 +1,6 @@
-import React, { ComponentPropsWithRef } from 'react'
-import { DropdownMenu } from '..'
 import { clsx } from 'clsx'
+import { ComponentPropsWithRef } from 'react'
+import { DropdownMenu } from '..'
 
 export const DropDownMenuArrow = ({
    className,

@@ -1,11 +1,10 @@
-import React, { ComponentPropsWithRef, useId } from 'react'
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-import { CheckedCheckboxIcon } from '@/shared/icons/CheckedCheckboxIcon'
-import { Typography } from '../Typography'
 import type { CheckedState } from '@radix-ui/react-checkbox'
-import { RecaptchaSuccessIcon } from '@/shared/icons'
-import { RecaptchaSpinner } from '@/shared/ui/Recaptcha/RecaptchaSpinner'
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { clsx } from 'clsx'
+import { ComponentPropsWithRef, useId } from 'react'
+import { Typography } from '../Typography'
+import { CheckedCheckboxIcon, RecaptchaSuccessIcon } from '@/icons'
+import { RecaptchaSpinner } from './RecaptchaSpinner'
 
 export type CheckboxProps = {
    id?: string

@@ -1,5 +1,5 @@
-import { ArrowLeftIcon, CrossIcon } from '@/shared/icons'
-import { cn } from '@/shared/lib'
+import { ArrowLeftIcon, CrossIcon } from '@/icons'
+import { cn } from '@/lib'
 import * as Dialog from '@radix-ui/react-dialog'
 import React, { ComponentPropsWithRef, ReactNode } from 'react'
 import { Button } from '../Button'

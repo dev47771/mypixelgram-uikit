@@ -1,8 +1,7 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { PostModal } from './PostModal'
-import { PostOutlineIcon } from '@/shared/icons'
+import { PostOutlineIcon } from '@/icons'
 import { Button } from '../Button'
-import Image from 'next/image'
 
 const meta = {
    argTypes: {},
@@ -61,13 +60,12 @@ export const Cropping: Story = {
       onBack: () => {},
       onNext: () => {},
       children: (
-         <Image
+         <img
             className="h-full w-full object-cover"
             src={`https://i.pinimg.com/736x/16/1f/7b/161f7b8d45c1e4fe4ad41fd42750de7a.jpg`}
             alt="Какая-то картинка"
             width={490}
             height={501}
-            priority
          />
       ),
    },
@@ -82,13 +80,12 @@ export const Filters: Story = {
       onBack: () => {},
       onNext: () => {},
       leftContent: (
-         <Image
+         <img
             className="h-full w-full object-cover"
             src={`https://i.pinimg.com/736x/16/1f/7b/161f7b8d45c1e4fe4ad41fd42750de7a.jpg`}
             alt="Какая-то картинка"
             width={490}
             height={501}
-            priority
          />
       ),
       leftContentClassName: 'w-full h-full overflow-hidden rounded-[1px]',
@@ -118,13 +115,12 @@ export const Publication: Story = {
       onBack: () => {},
       publish: () => {},
       leftContent: (
-         <Image
+         <img
             className="h-full w-full object-cover"
             src={`https://i.pinimg.com/736x/16/1f/7b/161f7b8d45c1e4fe4ad41fd42750de7a.jpg`}
             alt="Какая-то картинка"
             width={490}
             height={501}
-            priority
          />
       ),
       leftContentClassName: 'w-full h-full overflow-hidden rounded-[1px]',

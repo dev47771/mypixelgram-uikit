@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { DatePicker } from './DatePicker'
 import { useState } from 'react'
 import { Button } from '../Button'

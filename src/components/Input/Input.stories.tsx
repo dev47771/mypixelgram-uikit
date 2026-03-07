@@ -1,5 +1,5 @@
-import { Input } from '@/shared/components/Input'
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { Input } from './Input'
 
 const meta = {
    argTypes: {

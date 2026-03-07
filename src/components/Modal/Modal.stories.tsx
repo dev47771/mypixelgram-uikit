@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Modal, ModalBody, ModalClose, ModalTitle } from '@/shared/components/Modal'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { Modal, ModalBody, ModalClose, ModalTitle } from '../Modal'
 import { ComponentPropsWithRef, useState } from 'react'
-import { Typography } from '@/shared/components/Typography'
-import { CrossIcon } from '@/shared/icons'
+import { Typography } from '../Typography'
+import { CrossIcon } from '@/icons'
 
 const meta = {
    argTypes: {},

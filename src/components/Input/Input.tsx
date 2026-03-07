@@ -1,10 +1,8 @@
-'use client'
-
-import React, { ChangeEvent, ComponentPropsWithRef, useState } from 'react'
+import { PinLocation, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '@/icons'
 import { clsx } from 'clsx'
-import { PinLocation, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '@/shared/icons'
-import { Label } from '@/shared/components/Label'
-import { Typography } from '@/shared/components/Typography'
+import { ChangeEvent, ComponentPropsWithRef, useState } from 'react'
+import { Label } from '../Label'
+import { Typography } from '../Typography'
 
 export type InputProps = {
    errorMessage?: string

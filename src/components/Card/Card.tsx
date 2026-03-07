@@ -1,5 +1,5 @@
+import { cn } from '@/lib'
 import type { ComponentPropsWithRef, ElementType } from 'react'
-import { cn } from '@/shared/lib'
 
 type Props<T extends ElementType = 'div'> = {
    as?: T

@@ -1,1 +1,1 @@
-export * from './PostModal'
+export {PostModal} from './PostModal'

@@ -1,5 +1,5 @@
-import { Label } from '@/shared/components/Label'
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Label } from '../Label'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 const meta = {
    component: Label,

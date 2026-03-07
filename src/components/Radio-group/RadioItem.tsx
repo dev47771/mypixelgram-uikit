@@ -6,17 +6,6 @@ import { ComponentPropsWithRef, useContext } from 'react'
 import { Label } from '../Label'
 import { RadioGroupContext } from './Radio-group'
 
-/**
- * Individual radio item component for use within RadioButton
- *
- * @param label - Display text for the radio option
- * @param value - Unique value for the radio option
- * @param id - Optional custom id (defaults to value)
- * @param disabled - Disable this specific radio item
- * @param groupDisabled - Inherited disabled state from parent RadioButton
- *
- */
-
 type Props = ComponentPropsWithRef<typeof RadioGroupPrimitive.Item> & {
    label: string
    id?: string

@@ -1,16 +1,14 @@
-import React from 'react'
-import { usePagination } from '@/shared/components/Pagination'
-import { clsx } from 'clsx'
-import { DOTS } from '@/shared/components/Pagination/usePagination'
-import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons'
-import { useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+import { usePagination } from '../Pagination'
+import { PaginationLink, getSearchParams } from './PaginationLink'
 import {
    PaginationSelect,
    SelectOptionsType,
-} from '@/shared/components/Pagination/PaginationSelect'
-import { PaginationLink } from '@/shared/components/Pagination/PaginationLink'
+} from './PaginationSelect'
+
+import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
+import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { DOTS } from './usePagination'
 
 type Props = {
    className?: string
@@ -21,6 +19,8 @@ type Props = {
    pageSize: number
    siblingCount?: number
    totalCount: number
+   /** Текущие query-параметры (строка или URLSearchParams). Если не переданы — берутся из window.location.search */
+   searchParams?: URLSearchParams | string | null
 }
 
 export const Pagination = ({
@@ -32,8 +32,9 @@ export const Pagination = ({
    pageSize,
    siblingCount = 1,
    totalCount,
+   searchParams: searchParamsProp,
 }: Props) => {
-   const searchParams = useSearchParams()
+   const searchParams = getSearchParams(searchParamsProp)
 
    const paginationRange = usePagination({
       currentPage,
@@ -72,6 +73,7 @@ export const Pagination = ({
                      direction={'prev'}
                      disabled={isFirstPage}
                      onClick={onPreviousHandler}
+                     searchParams={searchParams}
                   >
                      <ArrowLeftIcon width={16} height={16} />
                   </PaginationLink>
@@ -87,18 +89,18 @@ export const Pagination = ({
                         )
                      }
 
-                     const newSearchParams = new URLSearchParams(searchParams?.toString())
+                     const newSearchParams = new URLSearchParams(searchParams.toString())
                      if (Number(page) === 1) {
                         newSearchParams.delete('page')
                      } else {
-                        newSearchParams?.set('page', page.toString())
+                        newSearchParams.set('page', page.toString())
                      }
                      const isActiveLink = page === currentPage
                      // Render our Page Pills
                      return (
-                        <Link
+                        <a
                            key={i}
-                           href={`?${newSearchParams}`}
+                           href={`?${newSearchParams.toString()}`}
                            className={twMerge(
                               clsx(
                                  'text-light-100 hover:bg-dark-500 rounded-xs px-2',
@@ -110,11 +112,16 @@ export const Pagination = ({
                            onClick={changePageHandler(page)}
                         >
                            {page}
-                        </Link>
+                        </a>
                      )
                   })}
 
-                  <PaginationLink direction={'next'} disabled={isLastPage} onClick={onNextHandler}>
+                  <PaginationLink
+                     direction={'next'}
+                     disabled={isLastPage}
+                     onClick={onNextHandler}
+                     searchParams={searchParams}
+                  >
                      <ArrowRightIcon width={16} height={16} />
                   </PaginationLink>
                </>

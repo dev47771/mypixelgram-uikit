@@ -1,11 +1,10 @@
-import React from 'react'
 import {
    Select,
    SelectContent,
    SelectItem,
    SelectTrigger,
    SelectValue,
-} from '@/shared/components/Select'
+} from "@/components/Select"
 
 export type SelectOptionsType = {
    label: string

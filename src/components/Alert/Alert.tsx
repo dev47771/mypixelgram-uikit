@@ -2,7 +2,6 @@
 import { CloseAlertIcon } from '@/icons/CloseAlertIcon'
 import { Toaster, toast } from 'react-hot-toast'
 
-
 export const Alert = () => (
    <Toaster
       position="bottom-left"

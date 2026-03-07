@@ -1,2 +1,2 @@
-export * from './PageContainer'
-export * from './ServerPageContainer'
+export {PageContainer} from './PageContainer'
+export {ServerPageContainer} from './ServerPageContainer'

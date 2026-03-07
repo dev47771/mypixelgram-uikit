@@ -1,6 +1,6 @@
-import React, { ComponentPropsWithRef } from 'react'
-import { DropdownMenu } from '@/shared/components/DropDownMenu'
 import { clsx } from 'clsx'
+import { ComponentPropsWithRef } from 'react'
+import { DropdownMenu } from '..'
 
 type Props = ComponentPropsWithRef<typeof DropdownMenu.Label>
 

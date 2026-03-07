@@ -1,7 +1,7 @@
-import React, { ComponentPropsWithRef } from 'react'
+import { Typography } from '../Typography'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
-import { Typography } from '@/shared/components/Typography'
+import { ComponentPropsWithRef } from 'react'
 
 type Props = {
    disabled?: boolean
