@@ -1,16 +1,15 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from 'react'
-import { TypographyVariant } from '@/shared/lib'
+import { TypographyVariant } from '@/lib'
 import { clsx } from 'clsx'
-import { resolveTypographyTag } from '@/shared/components/Typography/resolveTag'
-import { variantClasses } from '@/shared/components/Typography/variantClasses'
-import Link from 'next/link'
+import { resolveTypographyTag } from './resolveTag'
+import { variantClasses } from './variantClasses'
 
 export type TypographyProps<T extends ElementType> = {
    as?: T
    children?: ReactNode
    className?: string
    variant?: TypographyVariant
-} & (T extends typeof Link ? ComponentPropsWithRef<typeof Link> : ComponentPropsWithRef<T>)
+} & ComponentPropsWithRef<T>
 
 export const Typography = <T extends ElementType = 'p'>({
    as,

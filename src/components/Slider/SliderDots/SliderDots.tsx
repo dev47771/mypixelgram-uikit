@@ -1,5 +1,4 @@
-import React from 'react'
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
 
 type SlideMeta = {
    abs: number

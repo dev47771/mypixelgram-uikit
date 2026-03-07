@@ -1,7 +1,7 @@
-import { Typography } from '@/shared/components/Typography'
-import { CrossIcon } from '@/shared/icons'
-import { VolumeIcon } from '@/shared/icons/VolumeIcon'
-import { VolumeMuteIcon } from '@/shared/icons/VolumeMuteIcon'
+import { VolumeIcon } from '@/icons/VolumeIcon'
+import { Typography } from '../Typography'
+import { CrossIcon } from '@/icons'
+import { VolumeMuteIcon } from '@/icons/VolumeMuteIcon'
 
 type Props = {
    id: string

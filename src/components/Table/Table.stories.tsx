@@ -1,5 +1,6 @@
-import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from './'
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from './Table'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+
 
 const meta = {
    component: Table,

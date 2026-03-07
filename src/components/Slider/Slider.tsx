@@ -1,17 +1,12 @@
-'use client'
-
-import {
-   SliderArrow,
-   SliderContent,
-   SliderDots,
-   SliderRoot,
-   SliderSlide,
-   useSlider,
-} from '@/shared/components/Slider'
-import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/icons'
-import Image from 'next/image'
+import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
 import React, { ReactNode, useEffect } from 'react'
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
+import { SliderRoot } from './SliderRoot'
+import { SliderContent } from './SliderContent'
+import { SliderSlide } from './SliderSlide'
+import { SliderArrow } from './SliderArrow'
+import { SliderDots } from './SliderDots'
+import { useSlider } from './useSlider'
 
 type Props = {
    images: string[]
@@ -58,11 +53,16 @@ export const Slider = ({
                   {renderSlideAction ? (
                      renderSlideAction(src, i === currentSlide, currentSlide)
                   ) : (
-                     <Image
+                     <img
                         src={src}
-                        fill
+                        /* fill */
+                        
                         alt={'slider_element'}
-                        className={cn(isCrop ? 'object-cover' : 'object-contain', 'cursor-pointer')}
+                        className={cn(
+                           'w-full h-full',                            // чтобы картинка занимала весь слайд
+                           isCrop ? 'object-cover' : 'object-contain', // аналог поведения через fill + object-*
+                           'cursor-pointer'
+                        )}
                      />
                   )}
                </SliderSlide>

@@ -1,6 +1,5 @@
 import { ElementType } from 'react'
-import { TypographyVariant } from '@/shared/lib'
-import Link from 'next/link'
+import { TypographyVariant } from '@/lib'
 
 export function resolveTypographyTag(
    as: ElementType,
@@ -13,7 +12,7 @@ export function resolveTypographyTag(
          return as ?? variant
       case 'linkRegular':
       case 'linkSmall':
-         return as ?? Link
+         return as ?? 'a'
       case 'large':
       case 'bodyRegular':
       case 'bodyBold':

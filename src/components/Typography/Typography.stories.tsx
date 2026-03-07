@@ -1,6 +1,6 @@
-import { Typography } from '@/shared/components/Typography/Typography'
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { typographyVariants } from '@/shared/lib'
+import { Typography } from '../Typography'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { typographyVariants } from '@/lib'
 
 const meta = {
    argTypes: {

@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Slider } from '@/shared/components/Slider'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { Slider } from '../Slider'
 
 const meta = {
    title: 'Components/Slider',

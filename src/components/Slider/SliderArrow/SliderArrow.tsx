@@ -1,5 +1,5 @@
-import React, { ComponentPropsWithRef } from 'react'
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
+import { ComponentPropsWithRef } from 'react'
 
 type Props = ComponentPropsWithRef<'button'>
 

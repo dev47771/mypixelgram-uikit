@@ -1,5 +1,5 @@
-import { TabsList, Tabs, TabsTrigger, TabsContent } from './'
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { TabsList, Tabs, TabsTrigger, TabsContent } from './Tabs'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 
 const meta = {
