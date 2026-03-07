@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
 import { Track as SliderRadixTrack } from '@radix-ui/react-slider'
 import { ComponentPropsWithRef, ReactNode } from 'react'
 

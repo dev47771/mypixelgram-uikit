@@ -1,1 +1,1 @@
-export * from './Scroll'
+export {Scroll} from './Scroll'

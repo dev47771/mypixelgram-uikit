@@ -1,12 +1,10 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
-import {
-   RangeControl,
-   RangeControlRange,
-   RangeControlRoot,
-   RangeControlThumb,
-   RangeControlTrack,
-} from '@/shared/components/RangeControl'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
+import { RangeControl } from './RangeControl'
+import { RangeControlRoot } from './RangeControlRoot'
+import { RangeControlTrack } from './RangeControlTrack'
+import { RangeControlRange } from './RangeControlRange'
+import { RangeControlThumb } from './RangeControlThumb'
 
 const meta = {
    component: RangeControl,

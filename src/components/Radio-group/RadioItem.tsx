@@ -1,5 +1,3 @@
-'use client'
-
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import clsx from 'clsx'
 import { ComponentPropsWithRef, useContext } from 'react'

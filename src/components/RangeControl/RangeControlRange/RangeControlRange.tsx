@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
 import { Range as SliderRadixRange } from '@radix-ui/react-slider'
 import { ComponentPropsWithRef } from 'react'
 

@@ -1,10 +1,8 @@
-'use client'
-
 import { ComponentPropsWithRef, useId } from 'react'
-import { ArrowDownIcon } from '@/shared/icons'
+import { ArrowDownIcon } from '@/icons'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { clsx } from 'clsx'
-import { Label } from '@/shared/components/Label'
+import { Label } from '../Label'
 import { twMerge } from 'tailwind-merge'
 
 type Props = {

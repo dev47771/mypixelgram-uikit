@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
 import { Thumb as SliderRadixThumb } from '@radix-ui/react-slider'
 import { ComponentPropsWithRef } from 'react'
 

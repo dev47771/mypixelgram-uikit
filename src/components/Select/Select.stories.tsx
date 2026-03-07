@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import {
    Select,
    SelectContent,
@@ -7,8 +7,8 @@ import {
    SelectValue,
    SelectLabel,
    SelectGroup,
-} from '@/shared/components/Select/Select'
-import { FlagRussiaIcon, FlagUKIcon } from '@/shared/icons'
+} from './Select'
+import { FlagRussiaIcon, FlagUKIcon } from '@/icons'
 import { ComponentPropsWithRef, useState } from 'react'
 
 const meta = {
