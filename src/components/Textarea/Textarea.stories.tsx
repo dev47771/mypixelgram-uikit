@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { fn } from 'storybook/test'
-import { Textarea } from '@/shared/components/Textarea/'
+import { Textarea } from '../Textarea/'
 import { ComponentPropsWithRef, useState } from 'react'
 
 const meta = {

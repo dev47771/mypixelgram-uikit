@@ -1,5 +1,5 @@
-export { DropDownMenu } from './DropDawnMenu'
-export type { DropDownMenuProps } from './DropDawnMenu'
+export { DropDownMenu } from './DropDownMenu'
+export type { DropDownMenuProps } from './DropDownMenu'
 export * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 export { DropDownMenuItem } from './DropDownMenuItem/DropDownMenuItem'
 export { DropDownMenuLabel } from './DropDownMenuLabel'

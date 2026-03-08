@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { Checkbox } from './Checkbox'
-import { useState } from 'react'
 
 const meta = {
    component: Checkbox,
@@ -14,7 +13,20 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const CheckboxController = () => {
+export const States: Story = {
+   render: () => (
+      <div className="bg-dark-700 flex flex-col gap-4 p-4">
+         <Checkbox label="Default" />
+         <Checkbox label="Disabled and unchecked" disabled />
+         <Checkbox label="Disabled and checked" checked disabled />
+      </div>
+   ),
+}
+
+
+
+//удалить???????
+/* const CheckboxController = () => {
    const [agreements, setAgreements] = useState({
       terms: false,
       newsletter: false,
@@ -51,18 +63,10 @@ const CheckboxController = () => {
          </div>
       </div>
    )
-}
+} */
 
-export const States: Story = {
-   render: () => (
-      <div className="bg-dark-700 flex flex-col gap-4 p-4">
-         <Checkbox label="Default" />
-         <Checkbox label="Disabled and unchecked" disabled />
-         <Checkbox label="Disabled and checked" checked disabled />
-      </div>
-   ),
-}
 
-export const Controlled: Story = {
+
+/* export const Controlled: Story = {
    render: () => <CheckboxController />,
-}
+} */

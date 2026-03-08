@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { NotificationIcon } from '@/shared/icons'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { NotificationIcon } from '@/icons'
 
 const meta = {
    title: 'Icons/NotificationIcon',

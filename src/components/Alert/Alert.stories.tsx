@@ -2,9 +2,6 @@ import { Meta, StoryObj } from '@storybook/react-vite'
 import { Alert, alert } from './Alert'
 import { Button } from '../Button'
 
-
-
-
 const meta = {
    component: Alert,
    parameters: {

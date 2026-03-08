@@ -1,5 +1,5 @@
 import * as Icons from '../index'
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 const meta = {
    title: 'Icons',

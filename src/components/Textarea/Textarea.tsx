@@ -1,9 +1,7 @@
-'use client'
-
-import React, { ChangeEvent, ComponentPropsWithRef, useId } from 'react'
-import { Label } from '@/shared/components/Label'
+import { Label } from '../Label'
+import { Typography } from '../Typography'
 import { clsx } from 'clsx'
-import { Typography } from '@/shared/components/Typography'
+import { ChangeEvent, ComponentPropsWithRef, useId } from 'react'
 
 export type TextareaProps = {
    label?: string

@@ -1,4 +1,4 @@
-import { usePagination } from '../Pagination'
+
 import { PaginationLink, getSearchParams } from './PaginationLink'
 import {
    PaginationSelect,
@@ -8,7 +8,7 @@ import {
 import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { DOTS } from './usePagination'
+import { DOTS, usePagination } from './usePagination'
 
 type Props = {
    className?: string
