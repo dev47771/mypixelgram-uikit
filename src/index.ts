@@ -1,4 +1,6 @@
 import './styles/index.css'
 
 export * from './components'
-export { clsx } from 'clsx'
+
+//пока только компоненты оставляем
+/* export { clsx } from 'clsx' */

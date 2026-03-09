@@ -1,4 +1,4 @@
-import { TypographyVariant } from '@/lib'
+import { TypographyVariant } from './typographyVariants'
 
 export const variantClasses: Record<TypographyVariant, string> = {
    large: 'text-xxl font-semibold leading-l',

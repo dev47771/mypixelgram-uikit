@@ -1,6 +1,6 @@
 import { Typography } from '../Typography'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { typographyVariants } from '@/lib'
+import { typographyVariants } from './typographyVariants'
 
 const meta = {
    argTypes: {

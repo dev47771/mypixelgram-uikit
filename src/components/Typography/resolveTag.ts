@@ -1,5 +1,5 @@
 import { ElementType } from 'react'
-import { TypographyVariant } from '@/lib'
+import { TypographyVariant } from './typographyVariants'
 
 export function resolveTypographyTag(
    as: ElementType,

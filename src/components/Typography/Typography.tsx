@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from 'react'
-import { TypographyVariant } from '@/lib'
+import { TypographyVariant } from './typographyVariants'
 import { clsx } from 'clsx'
 import { resolveTypographyTag } from './resolveTag'
 import { variantClasses } from './variantClasses'
