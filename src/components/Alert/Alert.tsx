@@ -59,7 +59,7 @@ export const alert = {
 
    error: (message: string = 'Server is not available') =>
       toast.error(
-         <span>
+            <span>
             <span style={{ fontWeight: 'var(--font-weight-bold)' }}>Error! </span>
             {message}
          </span>
