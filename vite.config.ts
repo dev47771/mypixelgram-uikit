@@ -6,8 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [tailwindcss()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
   build: {
-    lib: {
+      lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'MY-LIB',
       // the proper extensions will be added

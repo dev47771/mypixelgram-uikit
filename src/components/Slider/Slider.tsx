@@ -1,4 +1,3 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
 import React, { ReactNode, useEffect } from 'react'
 import { cn } from '@/lib'
 import { SliderRoot } from './SliderRoot'
@@ -7,6 +6,7 @@ import { SliderSlide } from './SliderSlide'
 import { SliderArrow } from './SliderArrow'
 import { SliderDots } from './SliderDots'
 import { useSlider } from './useSlider'
+import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
 
 type Props = {
    images: string[]

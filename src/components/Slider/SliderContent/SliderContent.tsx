@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef } from 'react'
 import 'keen-slider/keen-slider.min.css'
-import { cn } from '@/shared/lib'
+import { cn } from '@/lib'
 
 type Props = ComponentPropsWithRef<'div'>
 
