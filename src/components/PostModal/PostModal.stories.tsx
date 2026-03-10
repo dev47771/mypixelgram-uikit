@@ -6,9 +6,6 @@ import { Button } from '../Button'
 const meta = {
    argTypes: {},
    component: PostModal,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
    title: 'Components/PostModal',
 } satisfies Meta<typeof PostModal>

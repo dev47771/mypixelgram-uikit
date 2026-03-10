@@ -1,6 +1,6 @@
+import { cn } from '@/lib'
 import { Typography } from '../Typography'
 import * as LabelRadix from '@radix-ui/react-label'
-import { clsx } from 'clsx'
 import { ComponentPropsWithRef } from 'react'
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 export const Label = ({ children, className, htmlFor, disabled, ...rest }: Props) => {
    return (
       <LabelRadix.Root
-         className={clsx(disabled ? 'text-light-300' : 'text-light-900', className)}
+         className={cn(disabled ? 'text-light-300' : 'text-light-900', className)}
          htmlFor={disabled ? '' : htmlFor}
          asChild
          {...rest}

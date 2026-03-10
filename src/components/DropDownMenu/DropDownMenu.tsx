@@ -1,6 +1,7 @@
 import { cn } from '@/lib'
 import { ComponentPropsWithRef, ReactNode } from 'react'
-import { DropdownMenu, DropDownMenuLabel } from '.'
+import { DropDownMenuLabel } from '.'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 export type DropDownMenuProps = {
    trigger: ReactNode

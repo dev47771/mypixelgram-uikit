@@ -8,9 +8,6 @@ import { RangeControlThumb } from './RangeControlThumb'
 
 const meta = {
    component: RangeControl,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
    title: 'Components/RangeControl',
 } satisfies Meta<typeof RangeControl>

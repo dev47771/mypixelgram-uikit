@@ -1,9 +1,9 @@
-import { ComponentPropsWithRef, useId } from 'react'
 import { ArrowDownIcon } from '@/icons'
+import { cn } from '@/lib'
 import * as SelectPrimitive from '@radix-ui/react-select'
-import { clsx } from 'clsx'
-import { Label } from '../Label'
+import { ComponentPropsWithRef, useId } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { Label } from '../Label'
 
 type Props = {
    label?: string
@@ -52,7 +52,7 @@ function SelectTrigger({ id, label, className, isPagination = false, children, .
             {children}
             <SelectPrimitive.Icon asChild>
                <ArrowDownIcon
-                  className={clsx(
+                  className={cn(
                      'transition-transform duration-200 ease-in-out group-data-[state=open]:rotate-180'
                   )}
                   color={'var(--color-light-100)'}
@@ -75,7 +75,7 @@ function SelectContent({
       <SelectPrimitive.Portal>
          <SelectPrimitive.Content
             data-slot="select-content"
-            className={clsx(
+            className={cn(
                'active:bg-dark-500 bg-dark-500 border-light-100 bg-popover relative z-50 min-w-[var(--radix-select-trigger-width)] overflow-x-hidden overflow-y-auto rounded-xs border',
                className || ''
             )}
@@ -83,7 +83,7 @@ function SelectContent({
             {...props}
          >
             <SelectPrimitive.Viewport
-               className={clsx(
+               className={cn(
                   position === 'popper' &&
                      'h-[var(--radix-select-trigger-height)] w-full scroll-my-1'
                )}
@@ -99,7 +99,7 @@ function SelectLabel({ className, ...props }: ComponentPropsWithRef<typeof Selec
    return (
       <SelectPrimitive.Label
          data-slot="select-label"
-         className={clsx('text-light-100 px-2 py-1.5 text-xs', className || '')}
+         className={cn('text-light-100 px-2 py-1.5 text-xs', className || '')}
          {...props}
       />
    )
@@ -114,7 +114,7 @@ function SelectItem({
    return (
       <SelectPrimitive.Item
          data-slot="select-item"
-         className={clsx(
+         className={cn(
             'text-s relative flex w-full cursor-pointer items-center gap-2 py-1.5 outline-hidden select-none',
 
             'focus:bg-accent active:text-light-100 focus:text-accent-foreground',

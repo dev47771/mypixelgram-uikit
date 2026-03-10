@@ -1,5 +1,5 @@
+import { cn } from '@/lib'
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
-import clsx from 'clsx'
 import { ComponentPropsWithRef, useContext } from 'react'
 import { Label } from '../Label'
 import { RadioGroupContext } from './Radio-group'
@@ -19,7 +19,7 @@ export const RadioItem = (props: Props) => {
    return (
       <div className="group flex items-center gap-3 p-1.5">
          <div
-            className={clsx(
+            className={cn(
                'relative',
                !isDisabled &&
                   [
@@ -35,7 +35,7 @@ export const RadioItem = (props: Props) => {
          >
             <RadioGroupPrimitive.Item
                disabled={isDisabled}
-               className={clsx(
+               className={cn(
                   'relative z-10 flex h-5 w-5 items-center justify-center',
                   'rounded-full border-2 transition-all duration-200 focus:outline-none',
                   isDisabled
@@ -47,7 +47,7 @@ export const RadioItem = (props: Props) => {
                {...rest}
             >
                <RadioGroupPrimitive.Indicator
-                  className={clsx(
+                  className={cn(
                      'h-[10px] w-[10px] rounded-full transition-all duration-200',
                      isDisabled ? 'bg-dark-100' : 'bg-light-100'
                   )}
@@ -57,7 +57,7 @@ export const RadioItem = (props: Props) => {
 
          <Label
             htmlFor={id || value}
-            className={clsx(
+            className={cn(
                'flex items-center',
                isDisabled ? '!text-light-900 cursor-default' : '!text-light-100 cursor-pointer'
             )}

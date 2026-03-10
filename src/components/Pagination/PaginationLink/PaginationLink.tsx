@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import { cn } from '@/lib'
 import { ReactNode } from 'react'
 
 type Direction = 'prev' | 'next'
@@ -45,7 +45,7 @@ export const PaginationLink = ({
    return (
       <a
          href={`?${newSearchParams.toString()}`}
-         className={clsx(
+         className={cn(
             'focus-visible:outline-accent-700 focus-visible:outline-2',
             disabled && 'text-dark-100 pointer-events-none cursor-not-allowed'
          )}

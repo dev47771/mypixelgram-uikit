@@ -1,7 +1,7 @@
+import { cn } from '@/lib'
 import { ComponentPropsWithRef, ElementType, ReactNode } from 'react'
-import { TypographyVariant } from './typographyVariants'
-import { clsx } from 'clsx'
 import { resolveTypographyTag } from './resolveTag'
+import { TypographyVariant } from './typographyVariants'
 import { variantClasses } from './variantClasses'
 
 export type TypographyProps<T extends ElementType> = {
@@ -21,7 +21,7 @@ export const Typography = <T extends ElementType = 'p'>({
    const Component = resolveTypographyTag(as, variant)
    const mergedClass =
       variant in variantClasses
-         ? clsx(variantClasses[variant as TypographyVariant], className)
+         ? cn(variantClasses[variant as TypographyVariant], className)
          : className
 
    return (

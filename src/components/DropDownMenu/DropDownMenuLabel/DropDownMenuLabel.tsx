@@ -1,6 +1,6 @@
 import { cn } from '@/lib'
 import { ComponentPropsWithRef } from 'react'
-import { DropdownMenu } from '..'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 type Props = ComponentPropsWithRef<typeof DropdownMenu.Label>
 

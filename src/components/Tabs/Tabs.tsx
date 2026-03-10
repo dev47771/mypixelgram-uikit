@@ -1,6 +1,6 @@
-import type { ComponentPropsWithRef } from 'react'
+import { cn } from '@/lib'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { clsx } from 'clsx'
+import type { ComponentPropsWithRef } from 'react'
 
 const Tabs = ({ ...rest }: ComponentPropsWithRef<typeof TabsPrimitive.Root>) => {
    return <TabsPrimitive.Root {...rest} />
@@ -13,7 +13,7 @@ const TabsList = ({
    ...rest
 }: ComponentPropsWithRef<typeof TabsPrimitive.List>) => {
    return (
-      <TabsPrimitive.List className={clsx('flex w-full justify-between', className)} {...rest}>
+      <TabsPrimitive.List className={cn('flex w-full justify-between', className)} {...rest}>
          {children}
       </TabsPrimitive.List>
    )
@@ -27,7 +27,7 @@ const TabsTrigger = ({
 }: ComponentPropsWithRef<typeof TabsPrimitive.Trigger>) => {
    return (
       <TabsPrimitive.Trigger
-         className={clsx(
+         className={cn(
             'leading-m text-m border-b-dark-100 text-dark-100 w-1/4 cursor-pointer border-b py-1 font-semibold',
 
             'hover:[&:not([data-state=active]):not([data-disabled])]:bg-accent-900/15',
@@ -54,7 +54,7 @@ type Props = {
 const TabsContent = ({ marginTop = 24, children, className, ...rest }: Props) => {
    return (
       <TabsPrimitive.Content
-         className={clsx(
+         className={cn(
             {
                'mt-[24px]': marginTop === 24,
                'mt-[30px]': marginTop === 30,
@@ -69,4 +69,5 @@ const TabsContent = ({ marginTop = 24, children, className, ...rest }: Props) =>
 }
 TabsContent.displayName = TabsPrimitive.Content.displayName
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export { Tabs, TabsContent, TabsList, TabsTrigger }
+

@@ -1,7 +1,7 @@
+import { cn } from '@/lib'
+import { ChangeEvent, ComponentPropsWithRef, useId } from 'react'
 import { Label } from '../Label'
 import { Typography } from '../Typography'
-import { clsx } from 'clsx'
-import { ChangeEvent, ComponentPropsWithRef, useId } from 'react'
 
 export type TextareaProps = {
    label?: string
@@ -45,7 +45,7 @@ export const Textarea = ({
             </Label>
          )}
          <textarea
-            className={clsx(
+            className={cn(
                'bg-dark-500 min-h-21 w-full min-w-71 resize-none rounded-xs border px-3 pt-1.5 outline-none focus:ring-0',
                errorMessage
                   ? 'border-danger-500 focus:border-danger-500'

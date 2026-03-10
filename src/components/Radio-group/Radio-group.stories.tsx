@@ -6,14 +6,6 @@ import { ComponentPropsWithRef, useState } from 'react'
 const meta = {
    title: 'Components/RadioGroup',
    component: RadioGroup,
-   parameters: {
-      layout: 'centered',
-      backgrounds: { default: 'dark' },
-      values: [
-         { name: 'dark', value: 'var(--color-dark-700)' },
-         { name: 'light', value: 'var(--color-light-100)' },
-      ],
-   },
    tags: ['autodocs'],
    argTypes: {
       onValueChange: { action: 'valueChanged' },

@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef } from 'react'
-import { clsx } from 'clsx'
 import * as Dialog from '@radix-ui/react-dialog'
+import { cn } from '@/lib'
 
 type Props = {
    className?: string
@@ -13,7 +13,7 @@ const ModalTitle = ({
    ...rest
 }: ComponentPropsWithRef<typeof Dialog.Title>) => {
    return (
-      <Dialog.Title asChild className={clsx('px-6 py-3', className)} {...rest}>
+      <Dialog.Title asChild className={cn('px-6 py-3', className)} {...rest}>
          <div>{children}</div>
       </Dialog.Title>
    )
@@ -25,7 +25,7 @@ const ModalClose = ({
    ...rest
 }: ComponentPropsWithRef<typeof Dialog.Close>) => {
    return (
-      <Dialog.Close className={clsx('cursor-pointer', className)} {...rest}>
+      <Dialog.Close className={cn('cursor-pointer', className)} {...rest}>
          {children}
       </Dialog.Close>
    )
@@ -50,7 +50,7 @@ const Modal = ({ portal: Portal = Dialog.Portal, children, className, ...rest }:
             <Dialog.Overlay className={'bg-dark-900/50 fixed inset-0'} />
 
             <Dialog.Content
-               className={clsx(
+               className={cn(
                   'fixed top-1/2 left-1/2 max-h-[90vh] max-w-[972px] -translate-x-1/2 -translate-y-1/2',
                   'bg-dark-300 border-dark-100 rounded-xs border',
                   className

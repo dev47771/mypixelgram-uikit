@@ -1,15 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { Slider } from '../Slider'
+import { fn } from '@storybook/test'
 
-const meta = {
+const meta: Meta<typeof Slider> = {
    title: 'Components/Slider',
    component: Slider,
    tags: ['autodocs'],
-   parameters: {
-      layout: 'centered',
-   },
-   globals: {
-      backgrounds: { value: 'dark' },
+   args: {
+      onSlideChange: fn(),
    },
 } satisfies Meta<typeof Slider>
 
@@ -51,7 +49,7 @@ export const BigSlider: Story = {
 
 export const WithOneSlide: Story = {
    args: {
-      images: ['./public/404.jpg'],
+      images: ['https://images.unsplash.com/photo-1743233883542-6028ee3882f4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974'],
       className: 'h-[501px] w-[490px]',
    },
 }

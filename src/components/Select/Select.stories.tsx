@@ -15,12 +15,6 @@ const meta = {
    title: 'Components/Select',
    component: Select,
    tags: ['autodocs'],
-   parameters: {
-      layout: 'centered',
-   },
-   globals: {
-      backgrounds: { value: 'dark' },
-   },
 } satisfies Meta<typeof Select>
 
 export default meta

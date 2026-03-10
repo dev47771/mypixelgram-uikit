@@ -5,9 +5,6 @@ import { useState } from 'react'
 const meta = {
    title: 'Components/Tabs',
    tags: ['autodocs'],
-   parameters: {
-      backgrounds: { default: 'var(--color-dark-700)' },
-   },
 } satisfies Meta<typeof Tabs>
 
 export default meta

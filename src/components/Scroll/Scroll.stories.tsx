@@ -3,9 +3,6 @@ import { Scroll } from './Scroll'
 
 const meta = {
    component: Scroll,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
    title: 'Components/Scroll',
 } satisfies Meta<typeof Scroll>

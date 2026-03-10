@@ -7,9 +7,6 @@ import { CrossIcon } from '@/icons'
 const meta = {
    argTypes: {},
    component: Modal,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
    title: 'Components/Modal',
 } satisfies Meta<typeof Modal>

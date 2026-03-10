@@ -7,12 +7,6 @@ const meta = {
    title: 'Components/Textarea',
    component: Textarea,
    tags: ['autodocs'],
-   parameters: {
-      layout: 'centered',
-   },
-   globals: {
-      backgrounds: { value: 'dark' },
-   },
    args: {
       label: 'Text-area',
       placeholder: 'Text-area',

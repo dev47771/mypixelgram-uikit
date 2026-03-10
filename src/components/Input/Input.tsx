@@ -1,8 +1,8 @@
 import { PinLocation, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '@/icons'
-import { clsx } from 'clsx'
 import { ChangeEvent, ComponentPropsWithRef, useState } from 'react'
 import { Label } from '../Label'
 import { Typography } from '../Typography'
+import { cn } from '@/lib'
 
 export type InputProps = {
    errorMessage?: string
@@ -46,7 +46,7 @@ export const Input = ({
 
    const inputType = type === 'password' ? (showPassword ? 'text' : 'password') : type
 
-   const inputClass = clsx(
+   const inputClass = cn(
       'w-full rounded-xs border-[1px] bg-transparent px-3 py-[6px] outline-none peer',
       type === 'search' && 'pl-[38px]',
       errorMessage ? 'border-danger-500' : 'border-dark-100',
@@ -58,7 +58,7 @@ export const Input = ({
    )
 
    return (
-      <div className={clsx('flex w-full min-w-[250px] flex-col', className)}>
+      <div className={cn('flex w-full min-w-[250px] flex-col', className)}>
          {label && (
             <Label disabled={disabled}>
                {label}
@@ -86,7 +86,7 @@ export const Input = ({
                   {errorMessage && !disabled && (
                      <Typography
                         variant={'captionRegular'}
-                        className={clsx('text-danger-500 break-words whitespace-normal')}
+                        className={cn('text-danger-500 break-words whitespace-normal')}
                      >
                         {errorMessage}
                      </Typography>
@@ -96,7 +96,7 @@ export const Input = ({
 
             {isShowButton && (
                <button
-                  className={clsx(
+                  className={cn(
                      'text-light-100 absolute top-2 right-2 cursor-pointer bg-transparent p-0',
                      'peer-disabled:text-dark-300 peer-disabled:pointer-events-none'
                   )}
@@ -110,7 +110,7 @@ export const Input = ({
             )}
             {isShowSearch && (
                <SearchIcon
-                  className={clsx(
+                  className={cn(
                      'text-light-900 absolute top-2 left-3 z-[-1]',
                      'peer-focus:text-light-100',
                      'peer-disabled:text-dark-300'
@@ -119,7 +119,7 @@ export const Input = ({
             )}
             {isShowLocation && (
                <PinLocation
-                  className={clsx(
+                  className={cn(
                      'text-light-900 absolute top-2 right-3 cursor-pointer',
                      'peer-focus:text-light-100',
                      'peer-disabled:text-dark-300'

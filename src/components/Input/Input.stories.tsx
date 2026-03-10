@@ -8,15 +8,6 @@ const meta = {
       },
    },
    component: Input,
-   parameters: {
-      layout: 'centered',
-      backgrounds: {
-         options: {
-            dark: { name: 'Dark', value: 'var(--color-dark-900)' },
-            light: { name: 'Light', value: 'var(--color-light-100)' },
-         },
-      },
-   },
    tags: ['autodocs'],
    title: 'Components/Input',
 } satisfies Meta<typeof Input>

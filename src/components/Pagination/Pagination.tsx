@@ -6,7 +6,7 @@ import {
 } from './PaginationSelect'
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
-import { clsx } from 'clsx'
+import { cn } from '@/lib'
 import { twMerge } from 'tailwind-merge'
 import { DOTS, usePagination } from './usePagination'
 
@@ -65,7 +65,7 @@ export const Pagination = ({
    const isLastPage = currentPage === paginationRange[paginationRange.length - 1]
 
    return (
-      <div className={twMerge(clsx('text-s m-[5px] flex items-center gap-3', className))}>
+      <div className={twMerge(cn('text-s m-[5px] flex items-center gap-3', className))}>
          <div className={'flex items-center gap-3'}>
             {paginationRange.length < 2 ? null : (
                <>
@@ -102,7 +102,7 @@ export const Pagination = ({
                            key={i}
                            href={`?${newSearchParams.toString()}`}
                            className={twMerge(
-                              clsx(
+                              cn(
                                  'text-light-100 hover:bg-dark-500 rounded-xs px-2',
                                  'focus-visible:outline-accent-700 focus-visible:outline-2',
                                  isActiveLink && 'text-dark-900 bg-light-100 hover:bg-light-500'
