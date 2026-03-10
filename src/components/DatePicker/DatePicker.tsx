@@ -5,7 +5,6 @@ import 'react-datepicker/dist/react-datepicker.css'
 import './styles/datePicker.css'
 import { cn } from '@/lib'
 
-
 export type DatePickerInputProps = {
    value?: string
    onClick?: () => void

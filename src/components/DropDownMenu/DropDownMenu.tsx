@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import { cn } from '@/lib'
 import { ComponentPropsWithRef, ReactNode } from 'react'
 import { DropdownMenu, DropDownMenuLabel } from '.'
 
@@ -27,7 +27,7 @@ export const DropDownMenu = ({
 
          <DropdownMenu.Portal>
             <DropdownMenu.Content
-               className={clsx(
+               className={cn(
                   'bg-dark-500 border-dark-100 z-20 max-h-[425px] max-w-[355px] overflow-hidden rounded-sm border',
                   className
                )}

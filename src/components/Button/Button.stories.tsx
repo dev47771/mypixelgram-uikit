@@ -3,8 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { LogoutIcon } from '@/icons'
 import { Button } from './Button'
 
-
-
 const meta = {
    argTypes: {
       variant: {

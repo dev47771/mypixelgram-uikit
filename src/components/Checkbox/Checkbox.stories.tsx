@@ -3,9 +3,6 @@ import { Checkbox } from './Checkbox'
 
 const meta = {
    component: Checkbox,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
    title: 'Components/Checkbox',
 } satisfies Meta<typeof Checkbox>

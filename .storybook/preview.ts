@@ -5,6 +5,7 @@ import '@fontsource-variable/inter'
 
 const preview: Preview = {
   parameters: {
+    layout: 'centered',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {

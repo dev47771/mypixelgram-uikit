@@ -1,10 +1,10 @@
 import type { CheckedState } from '@radix-ui/react-checkbox'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-import { clsx } from 'clsx'
 import { ComponentPropsWithRef, useId } from 'react'
 import { Typography } from '../Typography'
 import { CheckedCheckboxIcon, RecaptchaSuccessIcon } from '@/icons'
 import { RecaptchaSpinner } from './RecaptchaSpinner'
+import { cn } from '@/lib'
 
 export type CheckboxProps = {
    id?: string
@@ -31,7 +31,7 @@ export const Checkbox = ({
             className={`force-hover relative flex h-9 w-9 items-center justify-center rounded-full border-none bg-transparent shadow-none ring-0 transition-all duration-200 outline-none ${
                disabled
                   ? 'cursor-not-allowed'
-                  : clsx('group-active:bg-dark-100 group-focus-within:bg-dark-500 cursor-pointer', {
+                  : cn('group-active:bg-dark-100 group-focus-within:bg-dark-500 cursor-pointer', {
                        'group-hover:bg-dark-300': variant === 'default',
                     })
             }`}

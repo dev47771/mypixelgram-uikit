@@ -16,9 +16,6 @@ import { Typography } from '../Typography'
 
 const meta = {
    component: DropDownMenu,
-   parameters: {
-      layout: 'centered',
-   },
    argTypes: {
       align: {
          control: { type: 'radio' },

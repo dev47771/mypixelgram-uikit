@@ -1,7 +1,6 @@
 import { PostOutlineIcon } from '@/icons'
 import { cn } from '@/lib'
 
-
 type AvatarSize = 'sm' | 'md' | 'lg' | 'profile'
 
 type Props = {

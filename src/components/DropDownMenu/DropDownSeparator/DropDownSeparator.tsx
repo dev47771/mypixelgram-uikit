@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import { cn } from '@/lib'
 import { ComponentPropsWithRef } from 'react'
 import { DropdownMenu } from '..'
 
@@ -7,6 +7,6 @@ export const DropDownSeparator = ({
    ...rest
 }: ComponentPropsWithRef<typeof DropdownMenu.Separator>) => {
    return (
-      <DropdownMenu.Separator className={clsx('border-dark-100 border-t', className)} {...rest} />
+      <DropdownMenu.Separator className={cn('border-dark-100 border-t', className)} {...rest} />
    )
 }

@@ -4,9 +4,6 @@ import { Meta, StoryObj } from '@storybook/react-vite'
 const meta = {
    title: 'Components/Avatar',
    component: Avatar,
-   parameters: {
-      layout: 'centered',
-   },
    tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>
 
@@ -15,7 +12,7 @@ type Story = StoryObj<typeof meta>
 
 export const WithAvatar: Story = {
    args: {
-      src: './public/logo-light.png',
+      src: './src/components/Avatar/logo-light.png',
       alt: 'John Doe',
       size: 'md',
    },

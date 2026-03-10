@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import { cn } from '@/lib'
 import { ComponentPropsWithRef } from 'react'
 import { DropdownMenu } from '..'
 
@@ -9,7 +9,7 @@ export const DropDownMenuTrigger = ({
 }: ComponentPropsWithRef<typeof DropdownMenu.Trigger>) => {
    return (
       <DropdownMenu.Trigger
-         className={clsx('text-light-100 cursor-pointer bg-transparent outline-none', className)}
+         className={cn('text-light-100 cursor-pointer bg-transparent outline-none', className)}
          {...rest}
       >
          {children}
