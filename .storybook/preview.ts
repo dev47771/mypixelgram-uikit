@@ -4,6 +4,10 @@ import './style.css'
 import '@fontsource-variable/inter'
 
 const preview: Preview = {
+  initialGlobals: {
+    backgrounds: { value: 'dark' },
+  },
+
   parameters: {
     layout: 'centered',
     actions: { argTypesRegex: '^on[A-Z].*' },
