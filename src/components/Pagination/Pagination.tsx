@@ -66,7 +66,7 @@ export const Pagination = ({
 
    return (
       <div className={twMerge(cn('text-s m-[5px] flex items-center gap-3', className))}>
-         <div className={'flex items-center gap-3'}>
+         <div className={'text-light-100 flex items-center gap-3'}>
             {paginationRange.length < 2 ? null : (
                <>
                   <PaginationLink

@@ -21,7 +21,7 @@ export const LabelWithInput: Story = {
       return (
          <div className="flex items-center gap-2">
             <Label htmlFor={'input'}>hello</Label>
-            <input id={'input'} type="text" className="border-dark-100 rounded-[2px] border p-1" />
+            <input id={'input'} type="text" className="text-light-100 border-dark-100 rounded-[2px] border p-1" />
          </div>
       )
    },
@@ -34,7 +34,7 @@ export const LabelDisabled: Story = {
             <Label htmlFor={'input3'} disabled>
                hello
             </Label>
-            <input id={'input3'} type="text" className="border-dark-100 rounded-[2px] border p-1" />
+            <input id={'input3'} type="text" className="text-light-100 border-dark-100 rounded-[2px] border p-1" />
          </div>
       )
    },

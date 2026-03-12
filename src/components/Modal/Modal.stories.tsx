@@ -22,7 +22,7 @@ const ModalWrapper = ({
 
    return (
       <>
-         <button onClick={() => setShow(true)}>Open modal</button>
+         <button className="text-light-100 cursor-pointer" onClick={() => setShow(true)}>Open modal</button>
 
          <Modal onOpenChange={setShow} open={show} {...args}>
             {showTitle && (

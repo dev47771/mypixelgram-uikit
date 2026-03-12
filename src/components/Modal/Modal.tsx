@@ -51,7 +51,7 @@ const Modal = ({ portal: Portal = Dialog.Portal, children, className, ...rest }:
 
             <Dialog.Content
                className={cn(
-                  'fixed top-1/2 left-1/2 max-h-[90vh] max-w-[972px] -translate-x-1/2 -translate-y-1/2',
+                  'text-light-100 fixed top-1/2 left-1/2 max-h-[90vh] max-w-[972px] -translate-x-1/2 -translate-y-1/2',
                   'bg-dark-300 border-dark-100 rounded-xs border',
                   className
                )}

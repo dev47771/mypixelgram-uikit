@@ -1,10 +1,6 @@
 @import './colors.css';
 @import './typography.css';
 
-/* @import "tailwindcss";
-
-@config '../../tailwind.config.ts'; */
-
 /*
   Example custom styles:
   background-color add className: 'bg-danger-900',
@@ -34,8 +30,8 @@
   }
 
   html {
-    line-height: var(--line-height-m);
-    color: var(--color-light-100);
+   /*  line-height: var(--line-height-m);
+    color: var(--color-light-100); */
   }
 }
 

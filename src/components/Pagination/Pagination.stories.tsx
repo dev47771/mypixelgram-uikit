@@ -45,7 +45,7 @@ const ControlledPagination = () => {
   }
 
   return (
-    <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
+    <div className="text-light-100 flex flex-col items-center">
       <Typography variant={'h2'}>Number of current page: {current}</Typography>
       <Typography variant={'h2'}>Count items on page: {view}</Typography>
       <ul>
