@@ -1,9 +1,9 @@
 @import './colors.css';
 @import './typography.css';
 
-@import "tailwindcss";
+/* @import "tailwindcss";
 
-@config '../../tailwind.config.ts';
+@config '../../tailwind.config.ts'; */
 
 /*
   Example custom styles:
@@ -34,9 +34,8 @@
   }
 
   html {
- /*    line-height: var(--line-height-m);
+    line-height: var(--line-height-m);
     color: var(--color-light-100);
-    background-color: var(--color-dark-700); */
   }
 }
 
