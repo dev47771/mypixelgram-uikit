@@ -82,16 +82,16 @@ importers:
         specifier: ^0.1.5
         version: 0.1.5(postcss@8.5.8)(typescript@5.9.3)
       '@storybook/addon-a11y':
-        specifier: 10.1.1
+        specifier: ^10.1.1
         version: 10.1.1(storybook@10.1.1(@testing-library/dom@10.4.0)(prettier@3.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@storybook/addon-docs':
-        specifier: 10.1.1
+        specifier: ^10.1.1
         version: 10.1.1(@types/react@19.2.14)(esbuild@0.27.3)(rollup@4.59.0)(storybook@10.1.1(@testing-library/dom@10.4.0)(prettier@3.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(vite@5.4.21(@types/node@20.19.37)(lightningcss@1.31.1))
       '@storybook/addon-vitest':
-        specifier: 10.1.1
+        specifier: ^10.1.1
         version: 10.1.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(storybook@10.1.1(@testing-library/dom@10.4.0)(prettier@3.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@storybook/react-vite':
-        specifier: 10.1.1
+        specifier: ^10.1.1
         version: 10.1.1(esbuild@0.27.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.59.0)(storybook@10.1.1(@testing-library/dom@10.4.0)(prettier@3.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@5.4.21(@types/node@20.19.37)(lightningcss@1.31.1))
       '@storybook/test':
         specifier: ^8.6.15
@@ -115,7 +115,7 @@ importers:
         specifier: ^10.4.27
         version: 10.4.27(postcss@8.5.8)
       eslint-plugin-storybook:
-        specifier: 10.1.1
+        specifier: ^10.1.1
         version: 10.1.1(eslint@8.57.1)(storybook@10.1.1(@testing-library/dom@10.4.0)(prettier@3.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       postcss:
         specifier: ^8.5.6
