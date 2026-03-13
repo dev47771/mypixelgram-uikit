@@ -35,7 +35,7 @@ function SelectTrigger({ id, label, className, isPagination = false, children, .
             data-slot="select-trigger"
             className={twMerge(
                'group text-light-100 border-dark-100 text-s flex w-fit cursor-pointer items-center justify-between rounded-xs border py-1.5 outline-none',
-
+               'text-light-100',
                'focus-visible:text-light-900 focus-visible:border-accent-500',
                'disabled:border-dark-100 disabled:text-dark-100 disabled:cursor-not-allowed',
                'active:bg-dark-500',

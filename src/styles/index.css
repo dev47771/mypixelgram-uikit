@@ -29,10 +29,12 @@
     -webkit-text-fill-color: var(--color-light-100);
   }
 
-  html {
-   /*  line-height: var(--line-height-m);
-    color: var(--color-light-100); */
-  }
+  /* задает стили всему документу  */
+  
+  /* html {
+    line-height: var(--line-height-m);
+    color: var(--color-light-100);
+  } */
 }
 
 @layer utilities {

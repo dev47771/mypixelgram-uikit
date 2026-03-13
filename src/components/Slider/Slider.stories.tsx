@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { Slider } from '../Slider'
-import { fn } from '@storybook/test'
+/* import { fn } from '@storybook/test' */
 
 const meta: Meta<typeof Slider> = {
    title: 'Components/Slider',
    component: Slider,
    tags: ['autodocs'],
    args: {
-      onSlideChange: fn(),
+      onSlideChange: () => {},
    },
 } satisfies Meta<typeof Slider>
 

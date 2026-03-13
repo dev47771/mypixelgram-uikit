@@ -21,8 +21,8 @@ export const Typography = <T extends ElementType = 'p'>({
    const Component = resolveTypographyTag(as, variant)
    const mergedClass =
       variant in variantClasses
-         ? cn(variantClasses[variant as TypographyVariant], className)
-         : className
+         ? cn(variantClasses[variant as TypographyVariant], 'text-light-100', className)
+         : cn('text-light-100', className)
 
    return (
       <Component className={mergedClass} {...rest}>
