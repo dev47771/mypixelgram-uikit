@@ -1,4 +1,5 @@
 module.exports = {
     extends: '@it-incubator/prettier-config',
-    //override settings here
+    plugins: ['prettier-plugin-tailwindcss'], // sort style tailwind
+    tailwindFunctions: ['clsx', 'cn', 'twMerge'], // add sort style tailwind for 'clsx', 'cn', 'twMerge'
 }
