@@ -1,8 +1,16 @@
 import type { Preview } from '@storybook/react-vite'
 import '../src/styles/index.css'
+import './style.css'
+import '@fontsource-variable/inter'
+
 const preview: Preview = {
+  initialGlobals: {
+    backgrounds: { value: 'dark' },
+  },
+
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'centered',
+    actions: true,
     controls: {
       matchers: {
         color: /(background|color)$/i,

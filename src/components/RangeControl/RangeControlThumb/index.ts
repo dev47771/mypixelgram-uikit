@@ -1,0 +1,1 @@
+export {RangeControlThumb} from './RangeControlThumb'

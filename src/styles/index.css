@@ -1,41 +1,58 @@
-@import "tailwindcss";
+@import './colors.css';
+@import './typography.css';
 
-:root {
-  --font-family: system-ui, sans-serif;
-  --font-size-xs: 12px;
-  --font-size-s: 14px;
-  --font-size-m: 16px;
-  --font-size-l: 18px;
-  --font-size-xl: 20px;
-  --font-size-xxl: 22px;
-  --line-height-m: 24px;
-  --line-height-xl: 36px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
-}
+/*
+  Example custom styles:
+  background-color add className: 'bg-danger-900',
+  color text add className: 'text-danger-900',
+  font-size text add className: 'text-xxl',
+  line-height text add className: 'leading-l',
+  font-weight text add className: 'font-bold',
+*/
 
 @layer base {
-  input,
-  button,
-  select,
-  textarea,
-  optgroup,
-  option {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    color: inherit;
+  input[type='search']::-webkit-search-cancel-button {
+    cursor: pointer;
+    visibility: visible;
+    filter: brightness(0) invert(1);
   }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 0 transparent inset;
+    caret-color: var(--color-light-100);
+    transition: background-color 5000s ease-in-out 0s;
+
+    -webkit-text-fill-color: var(--color-light-900);
+  }
+
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-light-100);
+  }
+
+  /* задает стили всему документу  */
+  
+  /* html {
     line-height: var(--line-height-m);
+    color: var(--color-light-100);
+  } */
+}
+
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: var(--color-dark-300);
+    border-radius: 2px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-100);
+    border-radius: 2px;
   }
 }
 
-/* .debug-btn { background: red !important; color: white !important; } */
+body {
+  font-family: Inter, system-ui, sans-serif;
+}
