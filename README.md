@@ -32,6 +32,15 @@
   pnpm remove ui-kit-mypixelgram
   ```
 
+- npm installation
+  ```
+  install library:
+  pnpm add @filippsm/ui-kit-mypixelgram-demo
+
+  delete library:
+  pnpm remove @filippsm/ui-kit-mypixelgram-demo
+  ```
+
 *
 If you don't specify styles, rendering of imported components won't work, since Tailwind doesn't build, but only substitutes class names.
 
