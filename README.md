@@ -3,7 +3,8 @@
   ```
   установить локально:
   pnpm build
-  pnpm add ../@filippsm/ui-kit-mypixelgram-demo-1.0.0.tgz (версия будет в названии актуальная на момент билда)
+  pnpm pack (сгенериуется либа filippsm-ui-kit-mypixelgram-demo-1.0.1.tgz)
+  pnpm add ../filippsm-ui-kit-mypixelgram-demo-1.0.1.tgz (версия будет в названии актуальная на момент билда)
 
   запустить локально (запускается storybook):
   pnpm dev
@@ -281,7 +282,7 @@
       'line-clamp-[8]',
    ],
   } as unknown as Config
-  
+
   ```
 
 - Components/icons/libs:
