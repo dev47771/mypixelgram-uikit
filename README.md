@@ -1,6 +1,30 @@
 # Usage:
+- Short:
+  ```
+  установить локально:
+  pnpm build
+  pnpm add ../@filippsm/ui-kit-mypixelgram-demo-1.0.0.tgz (версия будет в названии актуальная на момент билда)
+
+  запустить локально (запускается storybook):
+  pnpm dev
+
+  установить пакет npm в проект:
+  pnpm add @filippsm/ui-kit-mypixelgram-demo
+
+  в проект в tailwind.config.ts обязательно добавить './node_modules/@filippsm/ui-kit-mypixelgram-demo/*/.{js,ts,jsx,tsx}':
+  content: ['./src/app/**/*.{ts,tsx,js,jsx}', './src/components/**/*.{ts,tsx,js,jsx}', './node_modules/@filippsm/ui-kit-mypixelgram-demo/*/.{js,ts,jsx,tsx}'],
+
+  в проект обязательно добавить: colors.css, typography.css и в tailwind.config.ts добавить кастомные переменные:
+  так как ui-kit на tailwind в билд передает только наименования классов, без стилей
+  если генерировать стили идет конфликт tailwind от ui-kit и проекта
+
+  может появляться ошибка для glob@10.5.0:
+  это неактульная версия у зависимой библиотеки сторибука 
+  ```
+   
 
 - UI Kit: Technology Stack:
+
   ```
   React 19 — core library
   TypeScript — type safety
@@ -10,29 +34,33 @@
   ```
 
   Install dependencies:
+
   ```
   pnpm install
   ```
 
 - Run storybook:
+
   ```
   pnpm dev
   ```
 
-- local installation
+- local installation (1.0.0 - must be a current version that will be generated)
+
   ```
   UI Kit:
   pnpm build - сompiles the library into the dist folder.
   pnpm pack - Creates a .tgz archive (npm package) from the compiled library
 
-  folder proect:
-  pnpm add ../ui-kit-mypixelgram-1.0.0.tgz
+  install library:
+  pnpm add ../@filippsm/ui-kit-mypixelgram-demo-1.0.0.tgz
 
-  delete libray:
+  delete library:
   pnpm remove ui-kit-mypixelgram
   ```
 
 - npm installation
+
   ```
   install library:
   pnpm add @filippsm/ui-kit-mypixelgram-demo
@@ -41,8 +69,7 @@
   pnpm remove @filippsm/ui-kit-mypixelgram-demo
   ```
 
-*
-If you don't specify styles, rendering of imported components won't work, since Tailwind doesn't build, but only substitutes class names.
+* If you don't specify styles, rendering of imported components won't work, since Tailwind doesn't build, but only substitutes class names.
 
 - Needs to be done in the project:
   ```
@@ -105,9 +132,9 @@ If you don't specify styles, rendering of imported components won't work, since 
     --line-height-l: 36px;
 
 
-    /* 
+    /*
     12px (0.75rem)
-    14px (0.875rem) 
+    14px (0.875rem)
     16px (1rem)
     18px (1.125rem)
     20px (1.25rem)
@@ -133,7 +160,7 @@ If you don't specify styles, rendering of imported components won't work, since 
 
   tailwind.config.ts:
   const config: Config = {
-   content: ['./src/app/**/*.{ts,tsx,js,jsx}', './src/components/**/*.{ts,tsx,js,jsx}'],
+   content: ['./src/app/**/*.{ts,tsx,js,jsx}', './src/components/**/*.{ts,tsx,js,jsx}', './node_modules/@filippsm/ui-kit-mypixelgram-demo/*/.{js,ts,jsx,tsx}'],
    theme: {
       extend: {
          colors: {
@@ -242,7 +269,7 @@ If you don't specify styles, rendering of imported components won't work, since 
          },
       },
    },
-   
+
    safelist: [
       'line-clamp-[1]',
       'line-clamp-[2]',
@@ -253,6 +280,294 @@ If you don't specify styles, rendering of imported components won't work, since 
       'line-clamp-[7]',
       'line-clamp-[8]',
    ],
-} as unknown as Config
+  } as unknown as Config
+  
   ```
 
+- Components/icons/libs:
+  ```
+  +---components
+    |   |   index.ts
+    |   |
+    |   +---Alert
+    |   |       Alert.stories.tsx
+    |   |       Alert.tsx
+    |   |       index.tsx
+    |   |
+    |   +---Avatar
+    |   |       Avatar.stories.tsx
+    |   |       Avatar.tsx
+    |   |       index.ts
+    |   |       logo-light.png
+    |   |
+    |   +---Button
+    |   |       Button.stories.tsx
+    |   |       Button.tsx
+    |   |       index.ts
+    |   |
+    |   +---Card
+    |   |       Card.stories.tsx
+    |   |       Card.tsx
+    |   |       index.ts
+    |   |
+    |   +---Checkbox
+    |   |       Checkbox.stories.tsx
+    |   |       Checkbox.tsx
+    |   |       index.ts
+    |   |       RecaptchaSpinner.tsx
+    |   |
+    |   +---DatePicker
+    |   |   |   DatePicker.stories.tsx
+    |   |   |   DatePicker.tsx
+    |   |   |   index.tsx
+    |   |   |
+    |   |   \---styles
+    |   |           datePicker.css
+    |   |
+    |   +---DropDownMenu
+    |   |   |   DropDownMenu.stories.tsx
+    |   |   |   DropDownMenu.tsx
+    |   |   |   index.ts
+    |   |   |
+    |   |   +---DropDownMenuArrow
+    |   |   |       DropDownMenuArrow.tsx
+    |   |   |       index.ts
+    |   |   |
+    |   |   +---DropDownMenuItem
+    |   |   |       DropDownMenuItem.tsx
+    |   |   |       index.ts
+    |   |   |
+    |   |   +---DropDownMenuLabel
+    |   |   |       DropDownMenuLabel.tsx
+    |   |   |       index.ts
+    |   |   |
+    |   |   +---DropDownMenuTrigger
+    |   |   |       DropDownMenuTrigger.tsx
+    |   |   |       index.ts
+    |   |   |
+    |   |   \---DropDownSeparator
+    |   |           DropDownSeparator.tsx
+    |   |           index.ts
+    |   |
+    |   +---Input
+    |   |       index.ts
+    |   |       Input.stories.tsx
+    |   |       Input.tsx
+    |   |
+    |   +---Label
+    |   |       index.ts
+    |   |       Label.stories.tsx
+    |   |       Label.tsx
+    |   |
+    |   +---Loader
+    |   |       index.ts
+    |   |       Loader.stories.tsx
+    |   |       Loader.tsx
+    |   |
+    |   +---Modal
+    |   |       index.ts
+    |   |       Modal.stories.tsx
+    |   |       Modal.tsx
+    |   |
+    |   +---Pagination
+    |   |   |   index.ts
+    |   |   |   Pagination.stories.tsx
+    |   |   |   Pagination.tsx
+    |   |   |   usePagination.ts
+    |   |   |
+    |   |   +---PaginationLink
+    |   |   |       index.ts
+    |   |   |       PaginationLink.tsx
+    |   |   |
+    |   |   \---PaginationSelect
+    |   |           index.ts
+    |   |           PaginationSelect.tsx
+    |   |
+    |   +---PostModal
+    |   |       index.ts
+    |   |       PostModal.stories.tsx
+    |   |       PostModal.tsx
+    |   |
+    |   +---Radio-group
+    |   |       index.ts
+    |   |       Radio-group.stories.tsx
+    |   |       Radio-group.tsx
+    |   |       RadioItem.tsx
+    |   |
+    |   +---RangeControl
+    |   |   |   index.ts
+    |   |   |   RangeControl.stories.tsx
+    |   |   |   RangeControl.tsx
+    |   |   |
+    |   |   +---RangeControlRange
+    |   |   |       index.ts
+    |   |   |       RangeControlRange.tsx
+    |   |   |
+    |   |   +---RangeControlRoot
+    |   |   |       index.ts
+    |   |   |       RangeControlRoot.tsx
+    |   |   |
+    |   |   +---RangeControlThumb
+    |   |   |       index.ts
+    |   |   |       RangeControlThumb.tsx
+    |   |   |
+    |   |   \---RangeControlTrack
+    |   |           index.ts
+    |   |           RangeControlTrack.tsx
+    |   |
+    |   +---Scroll
+    |   |       index.tsx
+    |   |       Scroll.stories.tsx
+    |   |       Scroll.tsx
+    |   |
+    |   +---Select
+    |   |       index.ts
+    |   |       Select.stories.tsx
+    |   |       Select.tsx
+    |   |
+    |   +---Slider
+    |   |   |   index.ts
+    |   |   |   Slider.stories.tsx
+    |   |   |   Slider.tsx
+    |   |   |   useSlider.ts
+    |   |   |
+    |   |   +---image
+    |   |   |       logo-dark.png
+    |   |   |       logo-light.png
+    |   |   |
+    |   |   +---SliderArrow
+    |   |   |       index.ts
+    |   |   |       SliderArrow.tsx
+    |   |   |
+    |   |   +---SliderContent
+    |   |   |       index.ts
+    |   |   |       SliderContent.tsx
+    |   |   |
+    |   |   +---SliderDots
+    |   |   |       index.ts
+    |   |   |       SliderDots.tsx
+    |   |   |
+    |   |   +---SliderRoot
+    |   |   |       index.ts
+    |   |   |       SliderRoot.tsx
+    |   |   |
+    |   |   \---SliderSlide
+    |   |           index.ts
+    |   |           SliderSlide.tsx
+    |   |
+    |   +---Table
+    |   |       index.ts
+    |   |       Table.stories.tsx
+    |   |       Table.tsx
+    |   |
+    |   +---Tabs
+    |   |       index.ts
+    |   |       Tabs.stories.tsx
+    |   |       Tabs.tsx
+    |   |
+    |   +---Textarea
+    |   |       index.ts
+    |   |       Textarea.stories.tsx
+    |   |       Textarea.tsx
+    |   |
+    |   +---Toast
+    |   |       index.ts
+    |   |       Toast.stories.tsx
+    |   |       Toast.tsx
+    |   |
+    |   \---Typography
+    |           index.ts
+    |           resolveTag.ts
+    |           Typography.stories.tsx
+    |           Typography.tsx
+    |           typographyVariants.ts
+    |           variantClasses.ts
+    |
+    +---icons
+    |   |   AddIcon.tsx
+    |   |   ArrowBackIcon.tsx
+    |   |   ArrowDownIcon.tsx
+    |   |   ArrowForwardIcon.tsx
+    |   |   ArrowLeftIcon.tsx
+    |   |   ArrowRightIcon.tsx
+    |   |   ArrowUpIcon.tsx
+    |   |   CalendarIcon.tsx
+    |   |   CalendarOutlineIcon.tsx
+    |   |   CheckedCheckboxIcon.tsx
+    |   |   CloseAlertIcon.tsx
+    |   |   CloseLock.tsx
+    |   |   CopyIcon.tsx
+    |   |   CreateIcon.tsx
+    |   |   CreateOutlineIcon.tsx
+    |   |   CrossIcon.tsx
+    |   |   DeleteVoiceIcon.tsx
+    |   |   DesktopIcon.tsx
+    |   |   EditIcon.tsx
+    |   |   ExpandOutline.tsx
+    |   |   FavoriteIcon.tsx
+    |   |   FavoriteOutlineIcon.tsx
+    |   |   FlagRussiaIcon.tsx
+    |   |   FlagUKIcon.tsx
+    |   |   FollowIcon.tsx
+    |   |   GitHubIcon.tsx
+    |   |   GoogleIcon.tsx
+    |   |   HomeIcon.tsx
+    |   |   HomeOutlineIcon.tsx
+    |   |   ImageOutline.tsx
+    |   |   index.ts
+    |   |   IphoneIcon.tsx
+    |   |   LikeIcon.tsx
+    |   |   LikeOutlineIcon.tsx
+    |   |   LogoutIcon.tsx
+    |   |   Maximize.tsx
+    |   |   MaximizeOutline.tsx
+    |   |   MessageIcon.tsx
+    |   |   MessageOutlineIcon.tsx
+    |   |   MicroIcon.tsx
+    |   |   MoreIcon.tsx
+    |   |   NotificationIcon.tsx
+    |   |   PaidIcon.tsx
+    |   |   PauseVoiceIcon.tsx
+    |   |   PaymentIcon.tsx
+    |   |   PaymentOutlineIcon.tsx
+    |   |   PayPalIcon.tsx
+    |   |   PersonIcon.tsx
+    |   |   PersonOutlineIcon.tsx
+    |   |   PinLocation.tsx
+    |   |   PlayVoiceIcon.tsx
+    |   |   PlusCircleOutline.tsx
+    |   |   PostIcon.tsx
+    |   |   PostOutlineIcon.tsx
+    |   |   proicons_volumeMute
+    |   |   ReCaptchaIcon.tsx
+    |   |   RecaptchaSuccessIcon.tsx
+    |   |   SearchIcon.tsx
+    |   |   ShareIcon.tsx
+    |   |   StatisticIcon.tsx
+    |   |   StripeIcon.tsx
+    |   |   TrashIcon.tsx
+    |   |   UnfollowIcon.tsx
+    |   |   VisibilityIcon.tsx
+    |   |   VisibilityOffIcon.tsx
+    |   |   VolumeIcon.tsx
+    |   |   VolumeMuteIcon.tsx
+    |   |
+    |   +---browsers
+    |   |       BraveIcon.tsx
+    |   |       ChromeIcon.tsx
+    |   |       ExplorerIcon.tsx
+    |   |       FirefoxIcon.tsx
+    |   |       MicrosoftEdge.tsx
+    |   |       OperaIcon.tsx
+    |   |       SafariIcon.tsx
+    |   |       UcBrowserIcon.tsx
+    |   |       YandexIcon.tsx
+    |   |
+    |   \---stories
+    |           Icons.stories.tsx
+    |           NotificationIcon.stories.tsx
+    |
+    +---lib
+    |       cn.ts
+    |       index.ts
+  ```
