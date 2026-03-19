@@ -1,5 +1,31 @@
-module.exports = {
-    extends: '@it-incubator/prettier-config',
-    plugins: ['prettier-plugin-tailwindcss'], // sort style tailwind
-    tailwindFunctions: ['clsx', 'cn', 'twMerge'], // add sort style tailwind for 'clsx', 'cn', 'twMerge'
+const config = {
+  trailingComma: 'es5',
+  tabWidth: 3,
+  semi: false,
+  singleQuote: true,
+  endOfLine: 'auto',
+  printWidth: 100,
+  requirePragma: true,
+  arrowParens: 'avoid',
+  plugins: ['prettier-plugin-tailwindcss'],
+  tailwindFunctions: ['clsx', 'cn', 'twMerge'],
+  overrides: [
+    {
+      files: '{**/*,*}.{css,scss,sass,less,js,jsx,ts,tsx,json,md,mdx}',
+      excludeFiles: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/build/**',
+        '**/coverage/**',
+        '**/public/**',
+        '**/*.d.ts',
+        '**/deployment/**',
+      ],
+      options: {
+        requirePragma: false,
+      },
+    },
+  ],
 }
+
+export default config
