@@ -12,9 +12,10 @@
   ],
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "vite build && tsc",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write .",
+    "prepare": "husky",
     "preview": "vite preview",
     "build-storybook": "storybook build"
   },
@@ -39,7 +40,6 @@
   "devDependencies": {
     "@chromatic-com/storybook": "4.1.1",
     "@fontsource-variable/inter": "^5.2.8",
-    "@it-incubator/prettier-config": "^0.1.2",
     "@storybook/addon-a11y": "^10.1.1",
     "@storybook/addon-docs": "^10.1.1",
     "@storybook/addon-vitest": "^10.1.1",
@@ -57,16 +57,25 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-storybook": "^10.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "storybook": "10.1.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "vite": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^19",
     "react-dom": "^19"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

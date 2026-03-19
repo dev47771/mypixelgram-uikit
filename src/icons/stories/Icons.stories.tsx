@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>
 
 export const AllIcons: Story = {
    render: () => (
-      <div className="bg-light-700 grid grid-cols-6 gap-6 p-6">
+      <div className="bg-light-900 grid grid-cols-6 gap-6 p-6">
          {Object.entries(Icons).map(([name, Icon]) => (
             <div key={name} className="flex flex-col items-center" title={name}>
                <Icon className="h-6 w-6" count={3} />
