@@ -102,15 +102,8 @@ const config: Config = {
             '100%': { transform: 'rotate(360deg)' },
          },
       },
-      container: {
-         center: true,
-         padding: '60px',
-         screens: {
-            xl: '1280px',
-         },
-      },
    },
-   
+
    safelist: [
       'line-clamp-[1]',
       'line-clamp-[2]',

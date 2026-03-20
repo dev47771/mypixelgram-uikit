@@ -1,5 +1,5 @@
 # Usage:
-- Short:
+- Summary:
   ```
   установить локально:
   pnpm build
@@ -20,12 +20,17 @@
   если генерировать стили идет конфликт tailwind от ui-kit и проекта
 
   может появляться ошибка для glob@10.5.0:
-  это неактульная версия у зависимой библиотеки сторибука 
+  это неактульная версия у зависимой библиотеки сторибука
+
+  ci/cd:
+  через github actions при пуше в ветку main - идет пуш в npm
+
+  если делать пуш в npm не автоматически, а в ручную:
+  pnpm build
+  pnpm publish --access public
   ```
    
-
 - UI Kit: Technology Stack:
-
   ```
   React 19 — core library
   TypeScript — type safety
@@ -35,19 +40,16 @@
   ```
 
   Install dependencies:
-
   ```
   pnpm install
   ```
 
 - Run storybook:
-
   ```
   pnpm dev
   ```
 
 - local installation (1.0.0 - must be a current version that will be generated)
-
   ```
   UI Kit:
   pnpm build - сompiles the library into the dist folder.
@@ -153,8 +155,6 @@
     /* font-weight */
     --font-weight-regular: 400;
     --font-weight-medium: 500;
-
-    /* stylelint-disable-next-line */
     --font-weight-semiBold: 600;
     --font-weight-bold: 700;
   }
@@ -262,13 +262,6 @@
             '100%': { transform: 'rotate(360deg)' },
          },
       },
-      container: {
-         center: true,
-         padding: '60px',
-         screens: {
-            xl: '1280px',
-         },
-      },
    },
 
    safelist: [
@@ -285,290 +278,125 @@
 
   ```
 
-- Components/icons/libs:
+- Export сomponents/icons:
   ```
-  +---components
-    |   |   index.ts
-    |   |
-    |   +---Alert
-    |   |       Alert.stories.tsx
-    |   |       Alert.tsx
-    |   |       index.tsx
-    |   |
-    |   +---Avatar
-    |   |       Avatar.stories.tsx
-    |   |       Avatar.tsx
-    |   |       index.ts
-    |   |       logo-light.png
-    |   |
-    |   +---Button
-    |   |       Button.stories.tsx
-    |   |       Button.tsx
-    |   |       index.ts
-    |   |
-    |   +---Card
-    |   |       Card.stories.tsx
-    |   |       Card.tsx
-    |   |       index.ts
-    |   |
-    |   +---Checkbox
-    |   |       Checkbox.stories.tsx
-    |   |       Checkbox.tsx
-    |   |       index.ts
-    |   |       RecaptchaSpinner.tsx
-    |   |
-    |   +---DatePicker
-    |   |   |   DatePicker.stories.tsx
-    |   |   |   DatePicker.tsx
-    |   |   |   index.tsx
-    |   |   |
-    |   |   \---styles
-    |   |           datePicker.css
-    |   |
-    |   +---DropDownMenu
-    |   |   |   DropDownMenu.stories.tsx
-    |   |   |   DropDownMenu.tsx
-    |   |   |   index.ts
-    |   |   |
-    |   |   +---DropDownMenuArrow
-    |   |   |       DropDownMenuArrow.tsx
-    |   |   |       index.ts
-    |   |   |
-    |   |   +---DropDownMenuItem
-    |   |   |       DropDownMenuItem.tsx
-    |   |   |       index.ts
-    |   |   |
-    |   |   +---DropDownMenuLabel
-    |   |   |       DropDownMenuLabel.tsx
-    |   |   |       index.ts
-    |   |   |
-    |   |   +---DropDownMenuTrigger
-    |   |   |       DropDownMenuTrigger.tsx
-    |   |   |       index.ts
-    |   |   |
-    |   |   \---DropDownSeparator
-    |   |           DropDownSeparator.tsx
-    |   |           index.ts
-    |   |
-    |   +---Input
-    |   |       index.ts
-    |   |       Input.stories.tsx
-    |   |       Input.tsx
-    |   |
-    |   +---Label
-    |   |       index.ts
-    |   |       Label.stories.tsx
-    |   |       Label.tsx
-    |   |
-    |   +---Loader
-    |   |       index.ts
-    |   |       Loader.stories.tsx
-    |   |       Loader.tsx
-    |   |
-    |   +---Modal
-    |   |       index.ts
-    |   |       Modal.stories.tsx
-    |   |       Modal.tsx
-    |   |
-    |   +---Pagination
-    |   |   |   index.ts
-    |   |   |   Pagination.stories.tsx
-    |   |   |   Pagination.tsx
-    |   |   |   usePagination.ts
-    |   |   |
-    |   |   +---PaginationLink
-    |   |   |       index.ts
-    |   |   |       PaginationLink.tsx
-    |   |   |
-    |   |   \---PaginationSelect
-    |   |           index.ts
-    |   |           PaginationSelect.tsx
-    |   |
-    |   +---PostModal
-    |   |       index.ts
-    |   |       PostModal.stories.tsx
-    |   |       PostModal.tsx
-    |   |
-    |   +---Radio-group
-    |   |       index.ts
-    |   |       Radio-group.stories.tsx
-    |   |       Radio-group.tsx
-    |   |       RadioItem.tsx
-    |   |
-    |   +---RangeControl
-    |   |   |   index.ts
-    |   |   |   RangeControl.stories.tsx
-    |   |   |   RangeControl.tsx
-    |   |   |
-    |   |   +---RangeControlRange
-    |   |   |       index.ts
-    |   |   |       RangeControlRange.tsx
-    |   |   |
-    |   |   +---RangeControlRoot
-    |   |   |       index.ts
-    |   |   |       RangeControlRoot.tsx
-    |   |   |
-    |   |   +---RangeControlThumb
-    |   |   |       index.ts
-    |   |   |       RangeControlThumb.tsx
-    |   |   |
-    |   |   \---RangeControlTrack
-    |   |           index.ts
-    |   |           RangeControlTrack.tsx
-    |   |
-    |   +---Scroll
-    |   |       index.tsx
-    |   |       Scroll.stories.tsx
-    |   |       Scroll.tsx
-    |   |
-    |   +---Select
-    |   |       index.ts
-    |   |       Select.stories.tsx
-    |   |       Select.tsx
-    |   |
-    |   +---Slider
-    |   |   |   index.ts
-    |   |   |   Slider.stories.tsx
-    |   |   |   Slider.tsx
-    |   |   |   useSlider.ts
-    |   |   |
-    |   |   +---image
-    |   |   |       logo-dark.png
-    |   |   |       logo-light.png
-    |   |   |
-    |   |   +---SliderArrow
-    |   |   |       index.ts
-    |   |   |       SliderArrow.tsx
-    |   |   |
-    |   |   +---SliderContent
-    |   |   |       index.ts
-    |   |   |       SliderContent.tsx
-    |   |   |
-    |   |   +---SliderDots
-    |   |   |       index.ts
-    |   |   |       SliderDots.tsx
-    |   |   |
-    |   |   +---SliderRoot
-    |   |   |       index.ts
-    |   |   |       SliderRoot.tsx
-    |   |   |
-    |   |   \---SliderSlide
-    |   |           index.ts
-    |   |           SliderSlide.tsx
-    |   |
-    |   +---Table
-    |   |       index.ts
-    |   |       Table.stories.tsx
-    |   |       Table.tsx
-    |   |
-    |   +---Tabs
-    |   |       index.ts
-    |   |       Tabs.stories.tsx
-    |   |       Tabs.tsx
-    |   |
-    |   +---Textarea
-    |   |       index.ts
-    |   |       Textarea.stories.tsx
-    |   |       Textarea.tsx
-    |   |
-    |   +---Toast
-    |   |       index.ts
-    |   |       Toast.stories.tsx
-    |   |       Toast.tsx
-    |   |
-    |   \---Typography
-    |           index.ts
-    |           resolveTag.ts
-    |           Typography.stories.tsx
-    |           Typography.tsx
-    |           typographyVariants.ts
-    |           variantClasses.ts
-    |
-    +---icons
-    |   |   AddIcon.tsx
-    |   |   ArrowBackIcon.tsx
-    |   |   ArrowDownIcon.tsx
-    |   |   ArrowForwardIcon.tsx
-    |   |   ArrowLeftIcon.tsx
-    |   |   ArrowRightIcon.tsx
-    |   |   ArrowUpIcon.tsx
-    |   |   CalendarIcon.tsx
-    |   |   CalendarOutlineIcon.tsx
-    |   |   CheckedCheckboxIcon.tsx
-    |   |   CloseAlertIcon.tsx
-    |   |   CloseLock.tsx
-    |   |   CopyIcon.tsx
-    |   |   CreateIcon.tsx
-    |   |   CreateOutlineIcon.tsx
-    |   |   CrossIcon.tsx
-    |   |   DeleteVoiceIcon.tsx
-    |   |   DesktopIcon.tsx
-    |   |   EditIcon.tsx
-    |   |   ExpandOutline.tsx
-    |   |   FavoriteIcon.tsx
-    |   |   FavoriteOutlineIcon.tsx
-    |   |   FlagRussiaIcon.tsx
-    |   |   FlagUKIcon.tsx
-    |   |   FollowIcon.tsx
-    |   |   GitHubIcon.tsx
-    |   |   GoogleIcon.tsx
-    |   |   HomeIcon.tsx
-    |   |   HomeOutlineIcon.tsx
-    |   |   ImageOutline.tsx
-    |   |   index.ts
-    |   |   IphoneIcon.tsx
-    |   |   LikeIcon.tsx
-    |   |   LikeOutlineIcon.tsx
-    |   |   LogoutIcon.tsx
-    |   |   Maximize.tsx
-    |   |   MaximizeOutline.tsx
-    |   |   MessageIcon.tsx
-    |   |   MessageOutlineIcon.tsx
-    |   |   MicroIcon.tsx
-    |   |   MoreIcon.tsx
-    |   |   NotificationIcon.tsx
-    |   |   PaidIcon.tsx
-    |   |   PauseVoiceIcon.tsx
-    |   |   PaymentIcon.tsx
-    |   |   PaymentOutlineIcon.tsx
-    |   |   PayPalIcon.tsx
-    |   |   PersonIcon.tsx
-    |   |   PersonOutlineIcon.tsx
-    |   |   PinLocation.tsx
-    |   |   PlayVoiceIcon.tsx
-    |   |   PlusCircleOutline.tsx
-    |   |   PostIcon.tsx
-    |   |   PostOutlineIcon.tsx
-    |   |   proicons_volumeMute
-    |   |   ReCaptchaIcon.tsx
-    |   |   RecaptchaSuccessIcon.tsx
-    |   |   SearchIcon.tsx
-    |   |   ShareIcon.tsx
-    |   |   StatisticIcon.tsx
-    |   |   StripeIcon.tsx
-    |   |   TrashIcon.tsx
-    |   |   UnfollowIcon.tsx
-    |   |   VisibilityIcon.tsx
-    |   |   VisibilityOffIcon.tsx
-    |   |   VolumeIcon.tsx
-    |   |   VolumeMuteIcon.tsx
-    |   |
-    |   +---browsers
-    |   |       BraveIcon.tsx
-    |   |       ChromeIcon.tsx
-    |   |       ExplorerIcon.tsx
-    |   |       FirefoxIcon.tsx
-    |   |       MicrosoftEdge.tsx
-    |   |       OperaIcon.tsx
-    |   |       SafariIcon.tsx
-    |   |       UcBrowserIcon.tsx
-    |   |       YandexIcon.tsx
-    |   |
-    |   \---stories
-    |           Icons.stories.tsx
-    |           NotificationIcon.stories.tsx
-    |
-    +---lib
-    |       cn.ts
-    |       index.ts
+   export {
+   J2 as AddIcon,
+   L2 as Alert,
+   v2 as ArrowBackIcon,
+   h0 as ArrowDownIcon,
+   x2 as ArrowForwardIcon,
+   f1 as ArrowLeftIcon,
+   y1 as ArrowRightIcon,
+   m2 as ArrowUpIcon,
+   k9 as Avatar,
+   p9 as BraveIcon,
+   H1 as Button,
+   u0 as CalendarIcon,
+   f0 as CalendarOutlineIcon,
+   Z9 as Card,
+   b2 as CheckedCheckboxIcon,
+   w9 as ChromeIcon,
+   s0 as CloseAlertIcon,
+   h9 as CloseLock,
+   K2 as CopyIcon,
+   y2 as CreateIcon,
+   M2 as CreateOutlineIcon,
+   x1 as CrossIcon,
+   R9 as DatePicker,
+   $2 as DeleteVoiceIcon,
+   u9 as DesktopIcon,
+   V9 as DropDownMenu,
+   B9 as DropDownMenuItem,
+   Z0 as DropDownMenuLabel,
+   H9 as DropDownSeparator,
+   e9 as EditIcon,
+   a9 as ExpandOutline,
+   L9 as ExplorerIcon,
+   k2 as FavoriteIcon,
+   Z2 as FavoriteOutlineIcon,
+   m9 as FirefoxIcon,
+   i9 as FlagRussiaIcon,
+   l9 as FlagUKIcon,
+   U2 as FollowIcon,
+   R2 as GitHubIcon,
+   V2 as GoogleIcon,
+   B2 as HomeIcon,
+   H2 as HomeOutlineIcon,
+   C9 as ImageOutline,
+   N9 as Input,
+   f9 as IphoneIcon,
+   g1 as Label,
+   E2 as LikeIcon,
+   _2 as LikeOutlineIcon,
+   S9 as Loader,
+   N2 as LogoutIcon,
+   o9 as Maximize,
+   n9 as MaximizeOutline,
+   S2 as MessageIcon,
+   I2 as MessageOutlineIcon,
+   W2 as MicroIcon,
+   x9 as MicrosoftEdge,
+   B0 as Modal,
+   V0 as ModalBody,
+   I1 as ModalClose,
+   w1 as ModalTitle,
+   G2 as MoreIcon,
+   A2 as NotificationIcon,
+   v9 as OperaIcon,
+   D9 as Pagination,
+   g9 as PaidIcon,
+   q2 as PauseVoiceIcon,
+   d9 as PayPalIcon,
+   D2 as PaymentIcon,
+   O2 as PaymentOutlineIcon,
+   P2 as PersonIcon,
+   z2 as PersonOutlineIcon,
+   b0 as PinLocation,
+   Y2 as PlayVoiceIcon,
+   c9 as PlusCircleOutline,
+   T2 as PostIcon,
+   O9 as PostModal,
+   g0 as PostOutlineIcon,
+   P9 as RadioGroup,
+   z9 as RadioItem,
+   T9 as RangeControl,
+   F2 as ReCaptchaIcon,
+   r9 as RecaptchaSuccessIcon,
+   b9 as SafariIcon,
+   F9 as Scroll,
+   w0 as SearchIcon,
+   H0 as Select,
+   I0 as SelectContent,
+   I9 as SelectGroup,
+   A0 as SelectItem,
+   A9 as SelectLabel,
+   S0 as SelectTrigger,
+   N0 as SelectValue,
+   X2 as ShareIcon,
+   j9 as Slider,
+   j2 as StatisticIcon,
+   s9 as StripeIcon,
+   e2 as Table,
+   r2 as TableBody,
+   i2 as TableCell,
+   t2 as TableHead,
+   n2 as TableHeadCell,
+   l2 as TableRow,
+   o2 as Tabs,
+   c2 as TabsContent,
+   a2 as TabsList,
+   C2 as TabsTrigger,
+   _9 as Textarea,
+   E9 as Toast,
+   t9 as TrashIcon,
+   J as Typography,
+   y9 as UcBrowserIcon,
+   Q2 as UnfollowIcon,
+   L0 as VisibilityIcon,
+   m0 as VisibilityOffIcon,
+   y0 as VolumeIcon,
+   M0 as VolumeMuteIcon,
+   M9 as YandexIcon
+   };
   ```
