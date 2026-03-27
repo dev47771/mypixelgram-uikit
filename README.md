@@ -3,7 +3,7 @@
   ```
   установить локально:
   pnpm build
-  pnpm pack (сгенериуется либа filippsm-ui-kit-mypixelgram-demo-1.0.1.tgz)
+  pnpm pack (сгенерируется либа filippsm-ui-kit-mypixelgram-demo-1.0.1.tgz)
   pnpm add ../filippsm-ui-kit-mypixelgram-demo-1.0.1.tgz (версия будет в названии актуальная на момент билда)
 
   запустить локально (запускается storybook):
@@ -22,8 +22,16 @@
   может появляться ошибка для glob@10.5.0:
   это неактульная версия у зависимой библиотеки сторибука
 
+  *чтобы изменения зались в npm обязательно обновть вверсию в package/version
+  -вручную 
+  -командой: 
+      pnpm version major
+      pnpm version minor
+      pnpm version patch
+
   ci/cd:
   через github actions при пуше в ветку main - идет пуш в npm
+  и пуш статической страницы storybook в github pages 
 
   если делать пуш в npm не автоматически, а в ручную:
   pnpm build
