@@ -3,6 +3,7 @@ import { dirname, resolve } from 'path'
 import { defineConfig } from 'vite'
 import pkg from './package.json' with { type: 'json' }
 import tailwindcss from '@tailwindcss/vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // create __dirname for ESM
 const __filename = fileURLToPath(import.meta.url)
@@ -31,6 +32,9 @@ export default defineConfig({
             }
          },
       },
+      viteStaticCopy({
+         targets: [{ src: 'src/styles/global.css', dest: '' }],
+      }),
    ],
    resolve: {
       alias: {
