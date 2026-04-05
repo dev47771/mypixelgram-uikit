@@ -3,13 +3,18 @@
   "private": false,
   "version": "1.0.5",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "dist/style.css"
-  ],
+
+  "files": ["dist"],
+
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/style.css",
+    "./tailwind-preset": "./dist/tailwind.preset.js"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "vite build && tsc -p tsconfig.build.json",
