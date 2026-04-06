@@ -1,18 +1,23 @@
 {
   "name": "@filippsm/ui-kit-mypixelgram-demo",
   "private": false,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "dist/style.css"
+    "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./global.css": "./dist/src/styles/global.css",
+    "./tailwind-preset": "./dist/tailwind.preset.js"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "vite build && tsc -p tsconfig.build.json",
+    "build": "vite build && tsc -p tsconfig.build.json && tsc -p tsconfig.preset.json",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write .",
     "prepare": "husky",
@@ -65,10 +70,13 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "rollup-plugin-copy": "^3.5.0",
     "storybook": "10.1.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-static-copy": "^4.0.1"
   },
   "peerDependencies": {
     "react": "^19",
