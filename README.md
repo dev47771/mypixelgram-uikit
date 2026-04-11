@@ -82,6 +82,10 @@
   через github actions при пуше в ветку main:
   - билдятся и загружаются изменения в npm (www.npmjs.com)
   - билдится и загружается статическая страница storybook в github pages (dev47771.github.io/mypixelgram-uikit/) 
+
+  **
+  импорт компонент, иконок, типов:
+  import { X } from '@filippsm/ui-kit-mypixelgram-demo'
   ```
    
 - UI Kit: Technology Stack:
