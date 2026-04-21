@@ -1,12 +1,9 @@
-
 import { PaginationLink, getSearchParams } from './PaginationLink'
-import {
-   PaginationSelect,
-   SelectOptionsType,
-} from './PaginationSelect'
+import { PaginationSelect, SelectOptionsType } from './PaginationSelect'
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/icons'
 import { cn } from '@/lib'
+import { MouseEvent } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { DOTS, usePagination } from './usePagination'
 
@@ -59,7 +56,11 @@ export const Pagination = ({
       }
    }
 
-   const changePageHandler = (pageNumber: number) => () => onChangePage(pageNumber)
+   const changePageHandler = (pageNumber: number) => (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      if (pageNumber === currentPage) return
+      onChangePage(pageNumber)
+   }
 
    const isFirstPage = currentPage === 1
    const isLastPage = currentPage === paginationRange[paginationRange.length - 1]
@@ -103,9 +104,9 @@ export const Pagination = ({
                            href={`?${newSearchParams.toString()}`}
                            className={twMerge(
                               cn(
-                                 'text-light-100 hover:bg-dark-500 rounded-xs px-2',
-                                 'focus-visible:outline-accent-700 focus-visible:outline-2',
-                                 isActiveLink && 'text-dark-900 bg-light-100 hover:bg-light-500'
+                                 `text-light-100 hover:bg-dark-500 rounded-xs px-2`,
+                                 `focus-visible:outline-accent-700 focus-visible:outline-2`,
+                                 isActiveLink && `bg-light-100 text-dark-900 hover:bg-light-500`
                               )
                            )}
                            tabIndex={isActiveLink ? -1 : 1}

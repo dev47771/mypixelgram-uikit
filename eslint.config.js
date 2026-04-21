@@ -37,6 +37,20 @@ const eslintConfig = [
                 ecmaVersion: 'latest',
                 sourceType: 'module',
             },
+            globals: {
+                window: 'readonly',
+                document: 'readonly',
+                navigator: 'readonly',
+                URLSearchParams: 'readonly',
+                HTMLElement: 'readonly',
+                HTMLAnchorElement: 'readonly',
+            },
+        },
+        settings: {
+            'better-tailwindcss': {
+                entryPoint: '.storybook/tailwind.css',
+                tailwindConfig: 'tailwind.config.ts',
+            },
         },
         rules: {
             ...reactPlugin.configs.recommended.rules,
@@ -48,6 +62,7 @@ const eslintConfig = [
             'react-hooks/rules-of-hooks': 'error',
             'react-hooks/exhaustive-deps': 'warn',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
+            'no-undef': 'off',
             '@typescript-eslint/no-non-null-assertion': 'error',
         },
     },

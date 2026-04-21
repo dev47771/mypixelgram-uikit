@@ -1,5 +1,5 @@
 import { cn } from '@/lib'
-import { ReactNode } from 'react'
+import { MouseEvent, ReactNode } from 'react'
 
 type Direction = 'prev' | 'next'
 
@@ -42,6 +42,12 @@ export const PaginationLink = ({
       newSearchParams.set('page', targetPage.toString())
    }
 
+   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      if (disabled) return
+      onClick?.()
+   }
+
    return (
       <a
          href={`?${newSearchParams.toString()}`}
@@ -49,7 +55,7 @@ export const PaginationLink = ({
             'focus-visible:outline-accent-700 focus-visible:outline-2',
             disabled && 'text-dark-100 pointer-events-none cursor-not-allowed'
          )}
-         onClick={onClick}
+         onClick={handleClick}
          tabIndex={disabled ? -1 : 1}
       >
          {children}
