@@ -47,6 +47,7 @@ export default defineConfig({
          name: 'MY-LIB',
          // the proper extensions will be added
          fileName: 'index',
+         cssFileName: 'style',
          formats: ['es'],
       },
       rollupOptions: {
